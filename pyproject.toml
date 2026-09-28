@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "szl-openshell-receipts"
+version = "0.2.0"
+description = "Governed, hash-chained receipts and an independent reach-delta witness for sandboxed agent runtimes."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+dependencies = []
+
+[project.scripts]
+szl-openshell-receipts = "szl_openshell_receipts.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
