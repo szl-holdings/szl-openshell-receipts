@@ -1,0 +1,8 @@
+# ILLUSTRATIVE ONLY. Validate against the OpenShell Policy Schema Reference before use.
+intent: szl-readonly-audit-lane
+filesystem:
+  read: ["/workspace/repo"]
+  write: ["/workspace/run"]
+network:
+  default: deny
+credentials: none
