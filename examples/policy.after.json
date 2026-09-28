@@ -1,0 +1,33 @@
+{
+  "note": "SZL simplified reach model, not OpenShell YAML",
+  "rules": [
+    {
+      "binary": "/usr/bin/gh",
+      "host": "api.github.com",
+      "port": 443,
+      "methods": [
+        "GET",
+        "PUT"
+      ],
+      "credentialed": true
+    },
+    {
+      "binary": "/usr/bin/curl",
+      "host": "169.254.169.254",
+      "port": 80,
+      "methods": [
+        "GET"
+      ],
+      "credentialed": false
+    },
+    {
+      "binary": "/usr/bin/ssh",
+      "host": "github.com",
+      "port": 22,
+      "methods": [
+        "*"
+      ],
+      "credentialed": true
+    }
+  ]
+}

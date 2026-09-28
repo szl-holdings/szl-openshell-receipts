@@ -1,0 +1,6 @@
+# SYNTHETIC sample shaped after documented OpenShell audit tokens; real field layout is UNKNOWN until captured.
+2026-09-28T20:00:00Z INFO HTTP:GET DENIED host=api.example.invalid port=443 binary=/usr/bin/curl rule_missing=true
+2026-09-28T20:00:01Z INFO CONFIG:PROPOSED chunk_id=c1 source=agent_authored
+2026-09-28T20:00:05Z INFO CONFIG:APPROVED chunk_id=c1 auto=true source=mechanistic prover_delta=empty resolved_from=sandbox
+2026-09-28T20:00:06Z INFO CONFIG:LOADED version=2
+2026-09-28T20:00:07Z INFO HTTP:GET ALLOWED host=api.example.invalid port=443 binary=/usr/bin/curl

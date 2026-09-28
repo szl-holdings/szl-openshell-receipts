@@ -1,0 +1,14 @@
+{
+  "note": "SZL simplified reach model, not OpenShell YAML",
+  "rules": [
+    {
+      "binary": "/usr/bin/gh",
+      "host": "api.github.com",
+      "port": 443,
+      "methods": [
+        "GET"
+      ],
+      "credentialed": true
+    }
+  ]
+}

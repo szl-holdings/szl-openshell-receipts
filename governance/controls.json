@@ -1,0 +1,65 @@
+{
+  "ledger": "szl-openshell-receipts controls v0.2",
+  "controls": [
+    {
+      "id": "C-01",
+      "requirement": "Receipt history is tamper-evident",
+      "control": "SHA-256 hash chain with offline verifier",
+      "owner": "stephenlutar2-hash",
+      "evidence": "tamper, reorder and 5,000-event stress tests",
+      "status": "MEASURED",
+      "evidence_ref": "tests/test_all.py::ChainTests"
+    },
+    {
+      "id": "C-02",
+      "requirement": "Every policy expansion is human-reviewed unless two independent witnesses find nothing",
+      "control": "SZL reach-set witness plus OpenShell prover result; disagreement forces review",
+      "owner": "stephenlutar2-hash",
+      "evidence": "gate unit tests",
+      "status": "MEASURED",
+      "evidence_ref": "tests/test_all.py::ReachTests"
+    },
+    {
+      "id": "C-03",
+      "requirement": "Approvals bind to the live candidate and never store raw tokens",
+      "control": "approval_event stores review_token_digest only",
+      "owner": "stephenlutar2-hash",
+      "evidence": "approval unit test",
+      "status": "MEASURED",
+      "evidence_ref": "tests/test_all.py::ApprovalControlsMultimodalTests"
+    },
+    {
+      "id": "C-04",
+      "requirement": "Multimodal inputs are attested as a combination, not only per channel",
+      "control": "combined bundle digest",
+      "owner": "stephenlutar2-hash",
+      "evidence": "channel-swap unit test",
+      "status": "MEASURED",
+      "evidence_ref": "tests/test_all.py::ApprovalControlsMultimodalTests"
+    },
+    {
+      "id": "C-05",
+      "requirement": "Live OpenShell events map correctly to receipts",
+      "control": "openshell_log parser",
+      "owner": "stephenlutar2-hash",
+      "evidence": "requires capture from a real read-only sandbox",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "C-06",
+      "requirement": "Agents never hold raw credentials",
+      "control": "OpenShell provider credential injection",
+      "owner": "stephenlutar2-hash",
+      "evidence": "requires live sandbox receipts",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "C-07",
+      "requirement": "Receipts are cryptographically signed",
+      "control": "DSSE signing lane",
+      "owner": "stephenlutar2-hash",
+      "evidence": "signing lane not wired",
+      "status": "UNAVAILABLE"
+    }
+  ]
+}
