@@ -7,4 +7,4 @@ from .multimodal import bundle
 
 __all__ = ["ReceiptChain", "verify_chain", "digest", "classify", "parse_line", "parse_log",
            "reach_set", "delta", "gate", "approval_event", "validate_ledger", "bundle"]
-__version__ = "0.2.0"
+__version__ = "0.3.0"

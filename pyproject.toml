@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "szl-openshell-receipts"
-version = "0.2.0"
+version = "0.3.0"
 description = "Governed, hash-chained receipts and an independent reach-delta witness for sandboxed agent runtimes."
 readme = "README.md"
 requires-python = ">=3.10"
