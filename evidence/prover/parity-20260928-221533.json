@@ -1,0 +1,16 @@
+{
+  "agree": 31,
+  "cases": 51,
+  "cli_study_sha256": "e87970d652e03dcae38091c75920c2143d1eecf351b4a6c1ce023dc7f97c848a",
+  "cx_n": 16,
+  "cx_ok": 16,
+  "dis": [],
+  "gateway": "NOT_CONNECTED",
+  "probe_sha256": "3e00efe8a732892c2bbdd4ddca7eacb6f4f3fc389154972b6baad0565174282b",
+  "prover_version": "0.1.2",
+  "rep_n": 33,
+  "rep_ok": 29,
+  "stamp": "20260928-221533",
+  "trust": "UNSIGNED_HONEST",
+  "valid": 31
+}
