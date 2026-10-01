@@ -14,5 +14,14 @@ dependencies = []
 [project.scripts]
 szl-openshell-receipts = "szl_openshell_receipts.cli:main"
 
+[project.urls]
+Homepage = "https://github.com/szl-holdings/szl-openshell-receipts"
+Source = "https://github.com/szl-holdings/szl-openshell-receipts"
+Issues = "https://github.com/szl-holdings/szl-openshell-receipts/issues"
+Changelog = "https://github.com/szl-holdings/szl-openshell-receipts/releases"
+
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.szl.release]
+import_names = ["szl_openshell_receipts"] # wheel top-level import names; the release gate fails if the built wheel differs
