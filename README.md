@@ -1,5 +1,7 @@
 # szl-openshell-receipts
 
+[![PyPI](https://img.shields.io/pypi/v/szl-openshell-receipts)](https://pypi.org/project/szl-openshell-receipts/) [![Python](https://img.shields.io/pypi/pyversions/szl-openshell-receipts)](https://pypi.org/project/szl-openshell-receipts/)
+
 Governed, hash-chained receipts and an independent policy reach-delta witness for sandboxed agent runtimes such as NVIDIA OpenShell.
 
 ## v0.2
