@@ -1,0 +1,128 @@
+{
+  "source_sha256": "888e1ffc3b1ebdfe0239a64052e17d69beb691b93d1bfdd00c3f127f60888fb6",
+  "source_unchanged_during_run": true,
+  "results": [
+    {
+      "case": "01",
+      "permutations": 25,
+      "json_roundtrips": 25,
+      "input_unchanged": true
+    },
+    {
+      "case": "02",
+      "permutations": 25,
+      "json_roundtrips": 25,
+      "input_unchanged": true
+    },
+    {
+      "case": "03",
+      "permutations": 25,
+      "json_roundtrips": 25,
+      "input_unchanged": true
+    },
+    {
+      "case": "04",
+      "permutations": 25,
+      "json_roundtrips": 25,
+      "input_unchanged": true
+    },
+    {
+      "case": "05",
+      "permutations": 25,
+      "json_roundtrips": 25,
+      "input_unchanged": true
+    },
+    {
+      "case": "06",
+      "permutations": 25,
+      "json_roundtrips": 25,
+      "input_unchanged": true
+    },
+    {
+      "case": "07",
+      "permutations": 25,
+      "json_roundtrips": 25,
+      "input_unchanged": true
+    },
+    {
+      "case": "08",
+      "permutations": 25,
+      "json_roundtrips": 25,
+      "input_unchanged": true
+    },
+    {
+      "case": "09",
+      "permutations": 25,
+      "json_roundtrips": 25,
+      "input_unchanged": true
+    },
+    {
+      "case": "10",
+      "permutations": 25,
+      "json_roundtrips": 25,
+      "input_unchanged": true
+    },
+    {
+      "case": "11",
+      "permutations": 25,
+      "json_roundtrips": 25,
+      "input_unchanged": true
+    },
+    {
+      "case": "12",
+      "permutations": 25,
+      "json_roundtrips": 25,
+      "input_unchanged": true
+    },
+    {
+      "case": "13",
+      "permutations": 25,
+      "json_roundtrips": 25,
+      "input_unchanged": true
+    },
+    {
+      "case": "14",
+      "permutations": 25,
+      "json_roundtrips": 25,
+      "input_unchanged": true
+    },
+    {
+      "case": "15",
+      "permutations": 25,
+      "json_roundtrips": 25,
+      "input_unchanged": true
+    },
+    {
+      "case": "16",
+      "permutations": 25,
+      "json_roundtrips": 25,
+      "input_unchanged": true
+    },
+    {
+      "case": "17",
+      "permutations": 0,
+      "json_roundtrips": 0,
+      "input_unchanged": true,
+      "note": "Raw malformed JSON case excluded from order permutations"
+    },
+    {
+      "case": "18",
+      "permutations": 25,
+      "json_roundtrips": 25,
+      "input_unchanged": true
+    },
+    {
+      "case": "19",
+      "permutations": 25,
+      "json_roundtrips": 25,
+      "input_unchanged": true
+    },
+    {
+      "case": "20",
+      "permutations": 25,
+      "json_roundtrips": 25,
+      "input_unchanged": true
+    }
+  ],
+  "total_orderings": 475
+}

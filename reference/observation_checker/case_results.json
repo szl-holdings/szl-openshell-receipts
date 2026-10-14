@@ -1,0 +1,3810 @@
+[
+  {
+    "case_id": "01",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [
+            "active",
+            "dispatch",
+            "reserved",
+            "settled"
+          ],
+          "reasons": [
+            "unique_attempt_costs_preserved"
+          ],
+          "status": "PASS"
+        },
+        "admission": {
+          "evidence_ids": [
+            "admission",
+            "grant",
+            "hydration"
+          ],
+          "reasons": [
+            "bound_current_admission_records_present"
+          ],
+          "status": "PASS"
+        },
+        "budget": {
+          "evidence_ids": [
+            "active",
+            "reserved",
+            "settled"
+          ],
+          "reasons": [
+            "within_declared_complete_trace_budget"
+          ],
+          "status": "PASS"
+        },
+        "claim_strength": {
+          "evidence_ids": [
+            "ack",
+            "active",
+            "admission",
+            "assessment",
+            "dispatch",
+            "generation",
+            "grant",
+            "hydration",
+            "reserved",
+            "restore",
+            "settled",
+            "terminal"
+          ],
+          "reasons": [
+            "declared_claims_do_not_exceed_supplied_evidence_scope"
+          ],
+          "status": "PASS"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "current_runtime_not_observed"
+          ],
+          "status": "UNKNOWN"
+        },
+        "durability": {
+          "evidence_ids": [
+            "ack"
+          ],
+          "reasons": [
+            "bound_durable_ack_present"
+          ],
+          "status": "PASS"
+        },
+        "identity": {
+          "evidence_ids": [
+            "ack",
+            "active",
+            "admission",
+            "assessment",
+            "dispatch",
+            "generation",
+            "grant",
+            "hydration",
+            "reserved",
+            "restore",
+            "settled",
+            "terminal"
+          ],
+          "reasons": [
+            "all_supplied_identities_match"
+          ],
+          "status": "PASS"
+        },
+        "lifecycle": {
+          "evidence_ids": [
+            "dispatch",
+            "terminal"
+          ],
+          "reasons": [
+            "terminal_outcome_observed"
+          ],
+          "status": "PASS"
+        },
+        "restoration": {
+          "evidence_ids": [
+            "restore"
+          ],
+          "reasons": [
+            "bound_fresh_process_readback_present"
+          ],
+          "status": "PASS"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "closed_bounded_schema_valid"
+          ],
+          "status": "PASS"
+        },
+        "support_assessment": {
+          "evidence_ids": [
+            "assessment"
+          ],
+          "reasons": [
+            "separate_bound_assessment_present_not_truth_certification"
+          ],
+          "status": "PASS"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": {
+        "administrative_closure": [],
+        "all_bound_assessment_verdicts": [
+          "SUPPORTED"
+        ],
+        "assessment_verdicts": [
+          "SUPPORTED"
+        ],
+        "attempts": [
+          {
+            "cost": 1,
+            "evidence_ids": [
+              "active",
+              "reserved",
+              "settled"
+            ],
+            "id": "attempt-1",
+            "state": "SETTLED"
+          }
+        ],
+        "cancellation": "NOT_OBSERVED",
+        "charged_or_reserved_cost": 1,
+        "cleanup": [],
+        "conflicting_record_ids": [],
+        "dispatch_record_ids": [
+          "dispatch"
+        ],
+        "duplicate_export_count": 0,
+        "evidence_class": "SYNTHETIC",
+        "journey": {
+          "action": "action-1",
+          "generation": "generation-1",
+          "plan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "policy_epoch": "epoch-1",
+          "run": "run-1",
+          "session": "session-1",
+          "stage": "synthesis",
+          "step": "step-1",
+          "tenant": "tenant-fictional"
+        },
+        "legacy_projections": [],
+        "local_contract_observations": [],
+        "outcome": "ANSWER",
+        "peak_prefix_cost": 1,
+        "prefix_costs": [
+          {
+            "cost": 1,
+            "record_id": "reserved"
+          },
+          {
+            "cost": 1,
+            "record_id": "active"
+          },
+          {
+            "cost": 1,
+            "record_id": "settled"
+          }
+        ],
+        "signature_integrity_records": [],
+        "source": {
+          "exporter_schema": "fixture-export/1",
+          "python": "3.12",
+          "repository": "synthetic/szl-reference",
+          "revision": "1111111111111111111111111111111111111111",
+          "tree": "2222222222222222222222222222222222222222"
+        },
+        "stale_record_ids": [],
+        "transport_observations": [],
+        "unaccounted_attempt_ids": [],
+        "unique_record_count": 12,
+        "unknown_attempt_ids": [],
+        "wall_clock_bound": "UNKNOWN"
+      },
+      "unresolved_references": []
+    }
+  },
+  {
+    "case_id": "02",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [
+            "active",
+            "unknown"
+          ],
+          "reasons": [
+            "unique_attempt_costs_preserved"
+          ],
+          "status": "PASS"
+        },
+        "admission": {
+          "evidence_ids": [],
+          "reasons": [
+            "missing_stale_or_unhydrated_admission_evidence"
+          ],
+          "status": "UNKNOWN"
+        },
+        "budget": {
+          "evidence_ids": [
+            "active",
+            "unknown"
+          ],
+          "reasons": [
+            "within_declared_complete_trace_budget"
+          ],
+          "status": "PASS"
+        },
+        "claim_strength": {
+          "evidence_ids": [
+            "active",
+            "cleanup-4",
+            "closure-3",
+            "unknown"
+          ],
+          "reasons": [
+            "declared_claims_do_not_exceed_supplied_evidence_scope"
+          ],
+          "status": "PASS"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "current_runtime_not_observed"
+          ],
+          "status": "UNKNOWN"
+        },
+        "durability": {
+          "evidence_ids": [],
+          "reasons": [
+            "durable_ack_missing_unresolved_stale_or_unsuitable"
+          ],
+          "status": "UNKNOWN"
+        },
+        "identity": {
+          "evidence_ids": [
+            "active",
+            "cleanup-4",
+            "closure-3",
+            "unknown"
+          ],
+          "reasons": [
+            "all_supplied_identities_match"
+          ],
+          "status": "PASS"
+        },
+        "lifecycle": {
+          "evidence_ids": [
+            "closure-3"
+          ],
+          "reasons": [
+            "outcome_unresolved_closure_is_not_success"
+          ],
+          "status": "UNKNOWN"
+        },
+        "restoration": {
+          "evidence_ids": [],
+          "reasons": [
+            "fresh_process_restoration_not_established"
+          ],
+          "status": "UNKNOWN"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "closed_bounded_schema_valid"
+          ],
+          "status": "PASS"
+        },
+        "support_assessment": {
+          "evidence_ids": [],
+          "reasons": [
+            "independent_bound_assessment_missing"
+          ],
+          "status": "UNKNOWN"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": {
+        "administrative_closure": [
+          "closure-3"
+        ],
+        "all_bound_assessment_verdicts": [],
+        "assessment_verdicts": [],
+        "attempts": [
+          {
+            "cost": 1,
+            "evidence_ids": [
+              "active",
+              "unknown"
+            ],
+            "id": "attempt-1",
+            "state": "UNKNOWN"
+          }
+        ],
+        "cancellation": "NOT_OBSERVED",
+        "charged_or_reserved_cost": 1,
+        "cleanup": [
+          "FAILED"
+        ],
+        "conflicting_record_ids": [],
+        "dispatch_record_ids": [],
+        "duplicate_export_count": 0,
+        "evidence_class": "SYNTHETIC",
+        "journey": {
+          "action": "action-1",
+          "generation": "generation-1",
+          "plan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "policy_epoch": "epoch-1",
+          "run": "run-1",
+          "session": "session-1",
+          "stage": "synthesis",
+          "step": "step-1",
+          "tenant": "tenant-fictional"
+        },
+        "legacy_projections": [],
+        "local_contract_observations": [],
+        "outcome": "UNKNOWN",
+        "peak_prefix_cost": 1,
+        "prefix_costs": [
+          {
+            "cost": 1,
+            "record_id": "active"
+          },
+          {
+            "cost": 1,
+            "record_id": "unknown"
+          }
+        ],
+        "signature_integrity_records": [],
+        "source": {
+          "exporter_schema": "fixture-export/1",
+          "python": "3.12",
+          "repository": "synthetic/szl-reference",
+          "revision": "1111111111111111111111111111111111111111",
+          "tree": "2222222222222222222222222222222222222222"
+        },
+        "stale_record_ids": [],
+        "transport_observations": [],
+        "unaccounted_attempt_ids": [],
+        "unique_record_count": 4,
+        "unknown_attempt_ids": [
+          "attempt-1"
+        ],
+        "wall_clock_bound": "UNKNOWN"
+      },
+      "unresolved_references": []
+    }
+  },
+  {
+    "case_id": "03",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [],
+          "reasons": [
+            "missing_or_incomplete_bound_attempt_history"
+          ],
+          "status": "UNKNOWN"
+        },
+        "admission": {
+          "evidence_ids": [],
+          "reasons": [
+            "missing_stale_or_unhydrated_admission_evidence"
+          ],
+          "status": "UNKNOWN"
+        },
+        "budget": {
+          "evidence_ids": [],
+          "reasons": [
+            "actual_budget_unknown"
+          ],
+          "status": "UNKNOWN"
+        },
+        "claim_strength": {
+          "evidence_ids": [
+            "wire"
+          ],
+          "reasons": [
+            "declared_claims_do_not_exceed_supplied_evidence_scope"
+          ],
+          "status": "PASS"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "current_runtime_not_observed"
+          ],
+          "status": "UNKNOWN"
+        },
+        "durability": {
+          "evidence_ids": [],
+          "reasons": [
+            "durable_ack_missing_unresolved_stale_or_unsuitable"
+          ],
+          "status": "UNKNOWN"
+        },
+        "identity": {
+          "evidence_ids": [
+            "wire"
+          ],
+          "reasons": [
+            "all_supplied_identities_match"
+          ],
+          "status": "PASS"
+        },
+        "lifecycle": {
+          "evidence_ids": [],
+          "reasons": [
+            "outcome_unresolved_closure_is_not_success"
+          ],
+          "status": "UNKNOWN"
+        },
+        "restoration": {
+          "evidence_ids": [],
+          "reasons": [
+            "fresh_process_restoration_not_established"
+          ],
+          "status": "UNKNOWN"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "closed_bounded_schema_valid"
+          ],
+          "status": "PASS"
+        },
+        "support_assessment": {
+          "evidence_ids": [],
+          "reasons": [
+            "independent_bound_assessment_missing"
+          ],
+          "status": "UNKNOWN"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": {
+        "administrative_closure": [],
+        "all_bound_assessment_verdicts": [],
+        "assessment_verdicts": [],
+        "attempts": [],
+        "cancellation": "NOT_OBSERVED",
+        "charged_or_reserved_cost": 0,
+        "cleanup": [],
+        "conflicting_record_ids": [],
+        "dispatch_record_ids": [],
+        "duplicate_export_count": 0,
+        "evidence_class": "SYNTHETIC",
+        "journey": {
+          "action": "action-1",
+          "generation": "generation-1",
+          "plan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "policy_epoch": "epoch-1",
+          "run": "run-1",
+          "session": "session-1",
+          "stage": "synthesis",
+          "step": "step-1",
+          "tenant": "tenant-fictional"
+        },
+        "legacy_projections": [],
+        "local_contract_observations": [],
+        "outcome": "UNKNOWN",
+        "peak_prefix_cost": 0,
+        "prefix_costs": [],
+        "signature_integrity_records": [],
+        "source": {
+          "exporter_schema": "fixture-export/1",
+          "python": "3.12",
+          "repository": "synthetic/szl-reference",
+          "revision": "1111111111111111111111111111111111111111",
+          "tree": "2222222222222222222222222222222222222222"
+        },
+        "stale_record_ids": [],
+        "transport_observations": [
+          {
+            "handles_only": true,
+            "id": "wire",
+            "status": 200
+          }
+        ],
+        "unaccounted_attempt_ids": [],
+        "unique_record_count": 1,
+        "unknown_attempt_ids": [],
+        "wall_clock_bound": "UNKNOWN"
+      },
+      "unresolved_references": []
+    }
+  },
+  {
+    "case_id": "04",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [],
+          "reasons": [
+            "missing_or_incomplete_bound_attempt_history"
+          ],
+          "status": "UNKNOWN"
+        },
+        "admission": {
+          "evidence_ids": [],
+          "reasons": [
+            "missing_stale_or_unhydrated_admission_evidence"
+          ],
+          "status": "UNKNOWN"
+        },
+        "budget": {
+          "evidence_ids": [],
+          "reasons": [
+            "actual_budget_unknown"
+          ],
+          "status": "UNKNOWN"
+        },
+        "claim_strength": {
+          "evidence_ids": [
+            "local"
+          ],
+          "reasons": [
+            "controller_local_or_deployment_evidence_not_qualified"
+          ],
+          "status": "UNKNOWN"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [
+            "local"
+          ],
+          "reasons": [
+            "current_runtime_not_observed"
+          ],
+          "status": "UNKNOWN"
+        },
+        "durability": {
+          "evidence_ids": [],
+          "reasons": [
+            "durable_ack_missing_unresolved_stale_or_unsuitable"
+          ],
+          "status": "UNKNOWN"
+        },
+        "identity": {
+          "evidence_ids": [
+            "local"
+          ],
+          "reasons": [
+            "all_supplied_identities_match"
+          ],
+          "status": "PASS"
+        },
+        "lifecycle": {
+          "evidence_ids": [],
+          "reasons": [
+            "outcome_unresolved_closure_is_not_success"
+          ],
+          "status": "UNKNOWN"
+        },
+        "restoration": {
+          "evidence_ids": [],
+          "reasons": [
+            "fresh_process_restoration_not_established"
+          ],
+          "status": "UNKNOWN"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "closed_bounded_schema_valid"
+          ],
+          "status": "PASS"
+        },
+        "support_assessment": {
+          "evidence_ids": [],
+          "reasons": [
+            "independent_bound_assessment_missing"
+          ],
+          "status": "UNKNOWN"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": {
+        "administrative_closure": [],
+        "all_bound_assessment_verdicts": [],
+        "assessment_verdicts": [],
+        "attempts": [],
+        "cancellation": "NOT_OBSERVED",
+        "charged_or_reserved_cost": 0,
+        "cleanup": [],
+        "conflicting_record_ids": [],
+        "dispatch_record_ids": [],
+        "duplicate_export_count": 0,
+        "evidence_class": "SYNTHETIC",
+        "journey": {
+          "action": "action-1",
+          "generation": "generation-1",
+          "plan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "policy_epoch": "epoch-1",
+          "run": "run-1",
+          "session": "session-1",
+          "stage": "synthesis",
+          "step": "step-1",
+          "tenant": "tenant-fictional"
+        },
+        "legacy_projections": [],
+        "local_contract_observations": [
+          {
+            "deployed": true,
+            "id": "local"
+          }
+        ],
+        "outcome": "UNKNOWN",
+        "peak_prefix_cost": 0,
+        "prefix_costs": [],
+        "signature_integrity_records": [],
+        "source": {
+          "exporter_schema": "fixture-export/1",
+          "python": "3.12",
+          "repository": "synthetic/szl-reference",
+          "revision": "1111111111111111111111111111111111111111",
+          "tree": "2222222222222222222222222222222222222222"
+        },
+        "stale_record_ids": [],
+        "transport_observations": [],
+        "unaccounted_attempt_ids": [],
+        "unique_record_count": 1,
+        "unknown_attempt_ids": [],
+        "wall_clock_bound": "UNKNOWN"
+      },
+      "unresolved_references": []
+    }
+  },
+  {
+    "case_id": "05",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [
+            "attempt-1",
+            "attempt-4"
+          ],
+          "reasons": [
+            "unique_attempt_costs_preserved"
+          ],
+          "status": "PASS"
+        },
+        "admission": {
+          "evidence_ids": [
+            "admission-2"
+          ],
+          "reasons": [
+            "explicit_admission_denial"
+          ],
+          "status": "FAIL"
+        },
+        "budget": {
+          "evidence_ids": [
+            "attempt-1",
+            "attempt-4"
+          ],
+          "reasons": [
+            "within_declared_complete_trace_budget"
+          ],
+          "status": "PASS"
+        },
+        "claim_strength": {
+          "evidence_ids": [
+            "admission-2",
+            "attempt-1",
+            "attempt-4",
+            "not_invoked-3",
+            "outcome-5"
+          ],
+          "reasons": [
+            "declared_claims_do_not_exceed_supplied_evidence_scope"
+          ],
+          "status": "PASS"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "current_runtime_not_observed"
+          ],
+          "status": "UNKNOWN"
+        },
+        "durability": {
+          "evidence_ids": [],
+          "reasons": [
+            "durable_ack_missing_unresolved_stale_or_unsuitable"
+          ],
+          "status": "UNKNOWN"
+        },
+        "identity": {
+          "evidence_ids": [
+            "admission-2",
+            "attempt-1",
+            "attempt-4",
+            "not_invoked-3",
+            "outcome-5"
+          ],
+          "reasons": [
+            "all_supplied_identities_match"
+          ],
+          "status": "PASS"
+        },
+        "lifecycle": {
+          "evidence_ids": [
+            "admission-2",
+            "outcome-5"
+          ],
+          "reasons": [
+            "terminal_outcome_observed"
+          ],
+          "status": "PASS"
+        },
+        "restoration": {
+          "evidence_ids": [],
+          "reasons": [
+            "fresh_process_restoration_not_established"
+          ],
+          "status": "UNKNOWN"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "closed_bounded_schema_valid"
+          ],
+          "status": "PASS"
+        },
+        "support_assessment": {
+          "evidence_ids": [],
+          "reasons": [
+            "independent_bound_assessment_missing"
+          ],
+          "status": "UNKNOWN"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": {
+        "administrative_closure": [],
+        "all_bound_assessment_verdicts": [],
+        "assessment_verdicts": [],
+        "attempts": [
+          {
+            "cost": 1,
+            "evidence_ids": [
+              "attempt-1",
+              "attempt-4"
+            ],
+            "id": "attempt-1",
+            "state": "ABANDONED_UNSENT"
+          }
+        ],
+        "cancellation": "NOT_OBSERVED",
+        "charged_or_reserved_cost": 0,
+        "cleanup": [],
+        "conflicting_record_ids": [],
+        "dispatch_record_ids": [],
+        "duplicate_export_count": 0,
+        "evidence_class": "SYNTHETIC",
+        "journey": {
+          "action": "action-1",
+          "generation": "generation-1",
+          "plan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "policy_epoch": "epoch-1",
+          "run": "run-1",
+          "session": "session-1",
+          "stage": "synthesis",
+          "step": "step-1",
+          "tenant": "tenant-fictional"
+        },
+        "legacy_projections": [],
+        "local_contract_observations": [],
+        "outcome": "ABSTAINED",
+        "peak_prefix_cost": 1,
+        "prefix_costs": [
+          {
+            "cost": 1,
+            "record_id": "attempt-1"
+          },
+          {
+            "cost": 0,
+            "record_id": "attempt-4"
+          }
+        ],
+        "signature_integrity_records": [],
+        "source": {
+          "exporter_schema": "fixture-export/1",
+          "python": "3.12",
+          "repository": "synthetic/szl-reference",
+          "revision": "1111111111111111111111111111111111111111",
+          "tree": "2222222222222222222222222222222222222222"
+        },
+        "stale_record_ids": [],
+        "transport_observations": [],
+        "unaccounted_attempt_ids": [],
+        "unique_record_count": 5,
+        "unknown_attempt_ids": [],
+        "wall_clock_bound": "UNKNOWN"
+      },
+      "unresolved_references": []
+    }
+  },
+  {
+    "case_id": "06",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [
+            "attempt-1",
+            "dispatch-3"
+          ],
+          "reasons": [
+            "unique_attempt_costs_preserved"
+          ],
+          "status": "PASS"
+        },
+        "admission": {
+          "evidence_ids": [
+            "admission-2"
+          ],
+          "reasons": [
+            "explicit_admission_denial"
+          ],
+          "status": "FAIL"
+        },
+        "budget": {
+          "evidence_ids": [
+            "attempt-1"
+          ],
+          "reasons": [
+            "within_declared_complete_trace_budget"
+          ],
+          "status": "PASS"
+        },
+        "claim_strength": {
+          "evidence_ids": [
+            "admission-2",
+            "attempt-1",
+            "dispatch-3"
+          ],
+          "reasons": [
+            "declared_claims_do_not_exceed_supplied_evidence_scope"
+          ],
+          "status": "PASS"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "current_runtime_not_observed"
+          ],
+          "status": "UNKNOWN"
+        },
+        "durability": {
+          "evidence_ids": [],
+          "reasons": [
+            "durable_ack_missing_unresolved_stale_or_unsuitable"
+          ],
+          "status": "UNKNOWN"
+        },
+        "identity": {
+          "evidence_ids": [
+            "admission-2",
+            "attempt-1",
+            "dispatch-3"
+          ],
+          "reasons": [
+            "all_supplied_identities_match"
+          ],
+          "status": "PASS"
+        },
+        "lifecycle": {
+          "evidence_ids": [
+            "admission-2",
+            "dispatch-3"
+          ],
+          "reasons": [
+            "denied_stage_dispatched"
+          ],
+          "status": "FAIL"
+        },
+        "restoration": {
+          "evidence_ids": [],
+          "reasons": [
+            "fresh_process_restoration_not_established"
+          ],
+          "status": "UNKNOWN"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "closed_bounded_schema_valid"
+          ],
+          "status": "PASS"
+        },
+        "support_assessment": {
+          "evidence_ids": [],
+          "reasons": [
+            "independent_bound_assessment_missing"
+          ],
+          "status": "UNKNOWN"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": {
+        "administrative_closure": [],
+        "all_bound_assessment_verdicts": [],
+        "assessment_verdicts": [],
+        "attempts": [
+          {
+            "cost": 1,
+            "evidence_ids": [
+              "attempt-1"
+            ],
+            "id": "attempt-1",
+            "state": "RESERVED_UNSENT"
+          }
+        ],
+        "cancellation": "NOT_OBSERVED",
+        "charged_or_reserved_cost": 1,
+        "cleanup": [],
+        "conflicting_record_ids": [],
+        "dispatch_record_ids": [
+          "dispatch-3"
+        ],
+        "duplicate_export_count": 0,
+        "evidence_class": "SYNTHETIC",
+        "journey": {
+          "action": "action-1",
+          "generation": "generation-1",
+          "plan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "policy_epoch": "epoch-1",
+          "run": "run-1",
+          "session": "session-1",
+          "stage": "synthesis",
+          "step": "step-1",
+          "tenant": "tenant-fictional"
+        },
+        "legacy_projections": [],
+        "local_contract_observations": [],
+        "outcome": "UNKNOWN",
+        "peak_prefix_cost": 1,
+        "prefix_costs": [
+          {
+            "cost": 1,
+            "record_id": "attempt-1"
+          }
+        ],
+        "signature_integrity_records": [],
+        "source": {
+          "exporter_schema": "fixture-export/1",
+          "python": "3.12",
+          "repository": "synthetic/szl-reference",
+          "revision": "1111111111111111111111111111111111111111",
+          "tree": "2222222222222222222222222222222222222222"
+        },
+        "stale_record_ids": [],
+        "transport_observations": [],
+        "unaccounted_attempt_ids": [],
+        "unique_record_count": 3,
+        "unknown_attempt_ids": [],
+        "wall_clock_bound": "UNKNOWN"
+      },
+      "unresolved_references": []
+    }
+  },
+  {
+    "case_id": "07",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [
+            "attempt-2",
+            "attempt-4"
+          ],
+          "reasons": [
+            "unique_attempt_costs_preserved"
+          ],
+          "status": "PASS"
+        },
+        "admission": {
+          "evidence_ids": [],
+          "reasons": [
+            "missing_stale_or_unhydrated_admission_evidence"
+          ],
+          "status": "UNKNOWN"
+        },
+        "budget": {
+          "evidence_ids": [
+            "attempt-2",
+            "attempt-4"
+          ],
+          "reasons": [
+            "within_declared_complete_trace_budget"
+          ],
+          "status": "PASS"
+        },
+        "claim_strength": {
+          "evidence_ids": [
+            "attempt-2",
+            "attempt-4",
+            "submission-1",
+            "timeout-3"
+          ],
+          "reasons": [
+            "declared_claims_do_not_exceed_supplied_evidence_scope"
+          ],
+          "status": "PASS"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "current_runtime_not_observed"
+          ],
+          "status": "UNKNOWN"
+        },
+        "durability": {
+          "evidence_ids": [],
+          "reasons": [
+            "durable_ack_missing_unresolved_stale_or_unsuitable"
+          ],
+          "status": "UNKNOWN"
+        },
+        "identity": {
+          "evidence_ids": [
+            "attempt-2",
+            "attempt-4",
+            "submission-1",
+            "timeout-3"
+          ],
+          "reasons": [
+            "all_supplied_identities_match"
+          ],
+          "status": "PASS"
+        },
+        "lifecycle": {
+          "evidence_ids": [],
+          "reasons": [
+            "outcome_unresolved_closure_is_not_success"
+          ],
+          "status": "UNKNOWN"
+        },
+        "restoration": {
+          "evidence_ids": [],
+          "reasons": [
+            "fresh_process_restoration_not_established"
+          ],
+          "status": "UNKNOWN"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "closed_bounded_schema_valid"
+          ],
+          "status": "PASS"
+        },
+        "support_assessment": {
+          "evidence_ids": [],
+          "reasons": [
+            "independent_bound_assessment_missing"
+          ],
+          "status": "UNKNOWN"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": {
+        "administrative_closure": [],
+        "all_bound_assessment_verdicts": [],
+        "assessment_verdicts": [],
+        "attempts": [
+          {
+            "cost": 1,
+            "evidence_ids": [
+              "attempt-2",
+              "attempt-4"
+            ],
+            "id": "attempt-1",
+            "state": "UNKNOWN"
+          }
+        ],
+        "cancellation": "NOT_OBSERVED",
+        "charged_or_reserved_cost": 1,
+        "cleanup": [],
+        "conflicting_record_ids": [],
+        "dispatch_record_ids": [],
+        "duplicate_export_count": 0,
+        "evidence_class": "SYNTHETIC",
+        "journey": {
+          "action": "action-1",
+          "generation": "generation-1",
+          "plan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "policy_epoch": "epoch-1",
+          "run": "run-1",
+          "session": "session-1",
+          "stage": "synthesis",
+          "step": "step-1",
+          "tenant": "tenant-fictional"
+        },
+        "legacy_projections": [],
+        "local_contract_observations": [],
+        "outcome": "UNKNOWN",
+        "peak_prefix_cost": 1,
+        "prefix_costs": [
+          {
+            "cost": 1,
+            "record_id": "attempt-2"
+          },
+          {
+            "cost": 1,
+            "record_id": "attempt-4"
+          }
+        ],
+        "signature_integrity_records": [],
+        "source": {
+          "exporter_schema": "fixture-export/1",
+          "python": "3.12",
+          "repository": "synthetic/szl-reference",
+          "revision": "1111111111111111111111111111111111111111",
+          "tree": "2222222222222222222222222222222222222222"
+        },
+        "stale_record_ids": [],
+        "transport_observations": [],
+        "unaccounted_attempt_ids": [],
+        "unique_record_count": 4,
+        "unknown_attempt_ids": [
+          "attempt-1"
+        ],
+        "wall_clock_bound": "UNKNOWN"
+      },
+      "unresolved_references": []
+    }
+  },
+  {
+    "case_id": "08",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [
+            "active",
+            "dispatch",
+            "reserved",
+            "settled"
+          ],
+          "reasons": [
+            "unique_attempt_costs_preserved"
+          ],
+          "status": "PASS"
+        },
+        "admission": {
+          "evidence_ids": [
+            "admission",
+            "grant",
+            "hydration"
+          ],
+          "reasons": [
+            "bound_current_admission_records_present"
+          ],
+          "status": "PASS"
+        },
+        "budget": {
+          "evidence_ids": [
+            "active",
+            "reserved",
+            "settled"
+          ],
+          "reasons": [
+            "within_declared_complete_trace_budget"
+          ],
+          "status": "PASS"
+        },
+        "claim_strength": {
+          "evidence_ids": [
+            "ack",
+            "active",
+            "admission",
+            "assessment",
+            "conflicting-terminal",
+            "dispatch",
+            "generation",
+            "grant",
+            "hydration",
+            "reserved",
+            "restore",
+            "settled",
+            "terminal"
+          ],
+          "reasons": [
+            "durable_claim_not_supported",
+            "restored_claim_not_supported",
+            "success_projection_contradicted"
+          ],
+          "status": "FAIL"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "current_runtime_not_observed"
+          ],
+          "status": "UNKNOWN"
+        },
+        "durability": {
+          "evidence_ids": [
+            "ack"
+          ],
+          "reasons": [
+            "durable_ack_missing_unresolved_stale_or_unsuitable"
+          ],
+          "status": "UNKNOWN"
+        },
+        "identity": {
+          "evidence_ids": [
+            "ack",
+            "active",
+            "admission",
+            "assessment",
+            "conflicting-terminal",
+            "dispatch",
+            "generation",
+            "grant",
+            "hydration",
+            "reserved",
+            "restore",
+            "settled",
+            "terminal"
+          ],
+          "reasons": [
+            "all_supplied_identities_match"
+          ],
+          "status": "PASS"
+        },
+        "lifecycle": {
+          "evidence_ids": [
+            "conflicting-terminal",
+            "dispatch",
+            "terminal"
+          ],
+          "reasons": [
+            "conflicting_terminal_results"
+          ],
+          "status": "FAIL"
+        },
+        "restoration": {
+          "evidence_ids": [
+            "restore"
+          ],
+          "reasons": [
+            "fresh_process_restoration_not_established"
+          ],
+          "status": "UNKNOWN"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "closed_bounded_schema_valid"
+          ],
+          "status": "PASS"
+        },
+        "support_assessment": {
+          "evidence_ids": [
+            "assessment"
+          ],
+          "reasons": [
+            "independent_bound_assessment_missing"
+          ],
+          "status": "UNKNOWN"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": {
+        "administrative_closure": [],
+        "all_bound_assessment_verdicts": [
+          "SUPPORTED"
+        ],
+        "assessment_verdicts": [],
+        "attempts": [
+          {
+            "cost": 1,
+            "evidence_ids": [
+              "active",
+              "reserved",
+              "settled"
+            ],
+            "id": "attempt-1",
+            "state": "SETTLED"
+          }
+        ],
+        "cancellation": "NOT_OBSERVED",
+        "charged_or_reserved_cost": 1,
+        "cleanup": [],
+        "conflicting_record_ids": [],
+        "dispatch_record_ids": [
+          "dispatch"
+        ],
+        "duplicate_export_count": 0,
+        "evidence_class": "SYNTHETIC",
+        "journey": {
+          "action": "action-1",
+          "generation": "generation-1",
+          "plan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "policy_epoch": "epoch-1",
+          "run": "run-1",
+          "session": "session-1",
+          "stage": "synthesis",
+          "step": "step-1",
+          "tenant": "tenant-fictional"
+        },
+        "legacy_projections": [],
+        "local_contract_observations": [],
+        "outcome": "CONFLICT",
+        "peak_prefix_cost": 1,
+        "prefix_costs": [
+          {
+            "cost": 1,
+            "record_id": "reserved"
+          },
+          {
+            "cost": 1,
+            "record_id": "active"
+          },
+          {
+            "cost": 1,
+            "record_id": "settled"
+          }
+        ],
+        "signature_integrity_records": [],
+        "source": {
+          "exporter_schema": "fixture-export/1",
+          "python": "3.12",
+          "repository": "synthetic/szl-reference",
+          "revision": "1111111111111111111111111111111111111111",
+          "tree": "2222222222222222222222222222222222222222"
+        },
+        "stale_record_ids": [],
+        "transport_observations": [],
+        "unaccounted_attempt_ids": [],
+        "unique_record_count": 13,
+        "unknown_attempt_ids": [],
+        "wall_clock_bound": "UNKNOWN"
+      },
+      "unresolved_references": []
+    }
+  },
+  {
+    "case_id": "09",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [
+            "active",
+            "dispatch",
+            "reserved",
+            "settled"
+          ],
+          "reasons": [
+            "unique_attempt_costs_preserved"
+          ],
+          "status": "PASS"
+        },
+        "admission": {
+          "evidence_ids": [
+            "admission",
+            "grant",
+            "hydration"
+          ],
+          "reasons": [
+            "bound_current_admission_records_present"
+          ],
+          "status": "PASS"
+        },
+        "budget": {
+          "evidence_ids": [
+            "active",
+            "reserved",
+            "settled"
+          ],
+          "reasons": [
+            "within_declared_complete_trace_budget"
+          ],
+          "status": "PASS"
+        },
+        "claim_strength": {
+          "evidence_ids": [
+            "ack",
+            "active",
+            "admission",
+            "assessment",
+            "dispatch",
+            "generation",
+            "grant",
+            "hydration",
+            "reserved",
+            "restore",
+            "settled",
+            "terminal"
+          ],
+          "reasons": [
+            "declared_claims_do_not_exceed_supplied_evidence_scope"
+          ],
+          "status": "PASS"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "current_runtime_not_observed"
+          ],
+          "status": "UNKNOWN"
+        },
+        "durability": {
+          "evidence_ids": [
+            "ack"
+          ],
+          "reasons": [
+            "bound_durable_ack_present"
+          ],
+          "status": "PASS"
+        },
+        "identity": {
+          "evidence_ids": [
+            "ack",
+            "active",
+            "admission",
+            "assessment",
+            "dispatch",
+            "generation",
+            "grant",
+            "hydration",
+            "reserved",
+            "restore",
+            "settled",
+            "terminal"
+          ],
+          "reasons": [
+            "all_supplied_identities_match"
+          ],
+          "status": "PASS"
+        },
+        "lifecycle": {
+          "evidence_ids": [
+            "dispatch",
+            "terminal"
+          ],
+          "reasons": [
+            "terminal_outcome_observed"
+          ],
+          "status": "PASS"
+        },
+        "restoration": {
+          "evidence_ids": [
+            "restore"
+          ],
+          "reasons": [
+            "bound_fresh_process_readback_present"
+          ],
+          "status": "PASS"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "closed_bounded_schema_valid"
+          ],
+          "status": "PASS"
+        },
+        "support_assessment": {
+          "evidence_ids": [
+            "assessment"
+          ],
+          "reasons": [
+            "separate_bound_assessment_present_not_truth_certification"
+          ],
+          "status": "PASS"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": {
+        "administrative_closure": [],
+        "all_bound_assessment_verdicts": [
+          "SUPPORTED"
+        ],
+        "assessment_verdicts": [
+          "SUPPORTED"
+        ],
+        "attempts": [
+          {
+            "cost": 1,
+            "evidence_ids": [
+              "active",
+              "reserved",
+              "settled"
+            ],
+            "id": "attempt-1",
+            "state": "SETTLED"
+          }
+        ],
+        "cancellation": "NOT_OBSERVED",
+        "charged_or_reserved_cost": 1,
+        "cleanup": [],
+        "conflicting_record_ids": [],
+        "dispatch_record_ids": [
+          "dispatch"
+        ],
+        "duplicate_export_count": 1,
+        "evidence_class": "SYNTHETIC",
+        "journey": {
+          "action": "action-1",
+          "generation": "generation-1",
+          "plan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "policy_epoch": "epoch-1",
+          "run": "run-1",
+          "session": "session-1",
+          "stage": "synthesis",
+          "step": "step-1",
+          "tenant": "tenant-fictional"
+        },
+        "legacy_projections": [],
+        "local_contract_observations": [],
+        "outcome": "ANSWER",
+        "peak_prefix_cost": 1,
+        "prefix_costs": [
+          {
+            "cost": 1,
+            "record_id": "reserved"
+          },
+          {
+            "cost": 1,
+            "record_id": "active"
+          },
+          {
+            "cost": 1,
+            "record_id": "settled"
+          }
+        ],
+        "signature_integrity_records": [],
+        "source": {
+          "exporter_schema": "fixture-export/1",
+          "python": "3.12",
+          "repository": "synthetic/szl-reference",
+          "revision": "1111111111111111111111111111111111111111",
+          "tree": "2222222222222222222222222222222222222222"
+        },
+        "stale_record_ids": [],
+        "transport_observations": [],
+        "unaccounted_attempt_ids": [],
+        "unique_record_count": 12,
+        "unknown_attempt_ids": [],
+        "wall_clock_bound": "UNKNOWN"
+      },
+      "unresolved_references": []
+    }
+  },
+  {
+    "case_id": "10",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [
+            "active",
+            "dispatch",
+            "reserved",
+            "settled"
+          ],
+          "reasons": [
+            "unique_attempt_costs_preserved"
+          ],
+          "status": "PASS"
+        },
+        "admission": {
+          "evidence_ids": [
+            "admission",
+            "grant",
+            "hydration"
+          ],
+          "reasons": [
+            "bound_current_admission_records_present"
+          ],
+          "status": "PASS"
+        },
+        "budget": {
+          "evidence_ids": [
+            "active",
+            "reserved",
+            "settled"
+          ],
+          "reasons": [
+            "within_declared_complete_trace_budget"
+          ],
+          "status": "PASS"
+        },
+        "claim_strength": {
+          "evidence_ids": [
+            "ack",
+            "active",
+            "admission",
+            "assessment",
+            "dispatch",
+            "generation",
+            "grant",
+            "hydration",
+            "reserved",
+            "restore",
+            "settled",
+            "terminal"
+          ],
+          "reasons": [
+            "durable_claim_not_supported",
+            "restored_claim_not_supported"
+          ],
+          "status": "FAIL"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "current_runtime_not_observed"
+          ],
+          "status": "UNKNOWN"
+        },
+        "durability": {
+          "evidence_ids": [
+            "ack"
+          ],
+          "reasons": [
+            "ack_result_or_attempt_mismatch"
+          ],
+          "status": "FAIL"
+        },
+        "identity": {
+          "evidence_ids": [
+            "ack",
+            "active",
+            "admission",
+            "assessment",
+            "dispatch",
+            "generation",
+            "grant",
+            "hydration",
+            "reserved",
+            "restore",
+            "settled",
+            "terminal"
+          ],
+          "reasons": [
+            "all_supplied_identities_match"
+          ],
+          "status": "PASS"
+        },
+        "lifecycle": {
+          "evidence_ids": [
+            "dispatch",
+            "terminal"
+          ],
+          "reasons": [
+            "terminal_outcome_observed"
+          ],
+          "status": "PASS"
+        },
+        "restoration": {
+          "evidence_ids": [
+            "restore"
+          ],
+          "reasons": [
+            "fresh_process_restoration_not_established"
+          ],
+          "status": "UNKNOWN"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "closed_bounded_schema_valid"
+          ],
+          "status": "PASS"
+        },
+        "support_assessment": {
+          "evidence_ids": [
+            "assessment"
+          ],
+          "reasons": [
+            "separate_bound_assessment_present_not_truth_certification"
+          ],
+          "status": "PASS"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": {
+        "administrative_closure": [],
+        "all_bound_assessment_verdicts": [
+          "SUPPORTED"
+        ],
+        "assessment_verdicts": [
+          "SUPPORTED"
+        ],
+        "attempts": [
+          {
+            "cost": 1,
+            "evidence_ids": [
+              "active",
+              "reserved",
+              "settled"
+            ],
+            "id": "attempt-1",
+            "state": "SETTLED"
+          }
+        ],
+        "cancellation": "NOT_OBSERVED",
+        "charged_or_reserved_cost": 1,
+        "cleanup": [],
+        "conflicting_record_ids": [],
+        "dispatch_record_ids": [
+          "dispatch"
+        ],
+        "duplicate_export_count": 0,
+        "evidence_class": "SYNTHETIC",
+        "journey": {
+          "action": "action-1",
+          "generation": "generation-1",
+          "plan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "policy_epoch": "epoch-1",
+          "run": "run-1",
+          "session": "session-1",
+          "stage": "synthesis",
+          "step": "step-1",
+          "tenant": "tenant-fictional"
+        },
+        "legacy_projections": [],
+        "local_contract_observations": [],
+        "outcome": "ANSWER",
+        "peak_prefix_cost": 1,
+        "prefix_costs": [
+          {
+            "cost": 1,
+            "record_id": "reserved"
+          },
+          {
+            "cost": 1,
+            "record_id": "active"
+          },
+          {
+            "cost": 1,
+            "record_id": "settled"
+          }
+        ],
+        "signature_integrity_records": [],
+        "source": {
+          "exporter_schema": "fixture-export/1",
+          "python": "3.12",
+          "repository": "synthetic/szl-reference",
+          "revision": "1111111111111111111111111111111111111111",
+          "tree": "2222222222222222222222222222222222222222"
+        },
+        "stale_record_ids": [],
+        "transport_observations": [],
+        "unaccounted_attempt_ids": [],
+        "unique_record_count": 12,
+        "unknown_attempt_ids": [],
+        "wall_clock_bound": "UNKNOWN"
+      },
+      "unresolved_references": []
+    }
+  },
+  {
+    "case_id": "11",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [
+            "active",
+            "dispatch",
+            "reserved",
+            "settled"
+          ],
+          "reasons": [
+            "unique_attempt_costs_preserved"
+          ],
+          "status": "PASS"
+        },
+        "admission": {
+          "evidence_ids": [
+            "admission",
+            "grant",
+            "hydration"
+          ],
+          "reasons": [
+            "bound_current_admission_records_present"
+          ],
+          "status": "PASS"
+        },
+        "budget": {
+          "evidence_ids": [
+            "active",
+            "reserved",
+            "settled"
+          ],
+          "reasons": [
+            "within_declared_complete_trace_budget"
+          ],
+          "status": "PASS"
+        },
+        "claim_strength": {
+          "evidence_ids": [
+            "ack",
+            "active",
+            "admission",
+            "assessment",
+            "dispatch",
+            "generation",
+            "grant",
+            "hydration",
+            "reserved",
+            "settled",
+            "terminal"
+          ],
+          "reasons": [
+            "declared_claims_do_not_exceed_supplied_evidence_scope"
+          ],
+          "status": "PASS"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "current_runtime_not_observed"
+          ],
+          "status": "UNKNOWN"
+        },
+        "durability": {
+          "evidence_ids": [
+            "ack"
+          ],
+          "reasons": [
+            "bound_durable_ack_present"
+          ],
+          "status": "PASS"
+        },
+        "identity": {
+          "evidence_ids": [
+            "ack",
+            "active",
+            "admission",
+            "assessment",
+            "dispatch",
+            "generation",
+            "grant",
+            "hydration",
+            "reserved",
+            "settled",
+            "terminal"
+          ],
+          "reasons": [
+            "all_supplied_identities_match"
+          ],
+          "status": "PASS"
+        },
+        "lifecycle": {
+          "evidence_ids": [
+            "dispatch",
+            "terminal"
+          ],
+          "reasons": [
+            "terminal_outcome_observed"
+          ],
+          "status": "PASS"
+        },
+        "restoration": {
+          "evidence_ids": [],
+          "reasons": [
+            "fresh_process_restoration_not_established"
+          ],
+          "status": "UNKNOWN"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "closed_bounded_schema_valid"
+          ],
+          "status": "PASS"
+        },
+        "support_assessment": {
+          "evidence_ids": [
+            "assessment"
+          ],
+          "reasons": [
+            "separate_bound_assessment_present_not_truth_certification"
+          ],
+          "status": "PASS"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": {
+        "administrative_closure": [],
+        "all_bound_assessment_verdicts": [
+          "SUPPORTED"
+        ],
+        "assessment_verdicts": [
+          "SUPPORTED"
+        ],
+        "attempts": [
+          {
+            "cost": 1,
+            "evidence_ids": [
+              "active",
+              "reserved",
+              "settled"
+            ],
+            "id": "attempt-1",
+            "state": "SETTLED"
+          }
+        ],
+        "cancellation": "NOT_OBSERVED",
+        "charged_or_reserved_cost": 1,
+        "cleanup": [],
+        "conflicting_record_ids": [],
+        "dispatch_record_ids": [
+          "dispatch"
+        ],
+        "duplicate_export_count": 0,
+        "evidence_class": "SYNTHETIC",
+        "journey": {
+          "action": "action-1",
+          "generation": "generation-1",
+          "plan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "policy_epoch": "epoch-1",
+          "run": "run-1",
+          "session": "session-1",
+          "stage": "synthesis",
+          "step": "step-1",
+          "tenant": "tenant-fictional"
+        },
+        "legacy_projections": [],
+        "local_contract_observations": [],
+        "outcome": "ANSWER",
+        "peak_prefix_cost": 1,
+        "prefix_costs": [
+          {
+            "cost": 1,
+            "record_id": "reserved"
+          },
+          {
+            "cost": 1,
+            "record_id": "active"
+          },
+          {
+            "cost": 1,
+            "record_id": "settled"
+          }
+        ],
+        "signature_integrity_records": [],
+        "source": {
+          "exporter_schema": "fixture-export/1",
+          "python": "3.12",
+          "repository": "synthetic/szl-reference",
+          "revision": "1111111111111111111111111111111111111111",
+          "tree": "2222222222222222222222222222222222222222"
+        },
+        "stale_record_ids": [],
+        "transport_observations": [],
+        "unaccounted_attempt_ids": [],
+        "unique_record_count": 11,
+        "unknown_attempt_ids": [],
+        "wall_clock_bound": "UNKNOWN"
+      },
+      "unresolved_references": []
+    }
+  },
+  {
+    "case_id": "12",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [
+            "attempt-1"
+          ],
+          "reasons": [
+            "unique_attempt_costs_preserved"
+          ],
+          "status": "PASS"
+        },
+        "admission": {
+          "evidence_ids": [],
+          "reasons": [
+            "missing_stale_or_unhydrated_admission_evidence"
+          ],
+          "status": "UNKNOWN"
+        },
+        "budget": {
+          "evidence_ids": [
+            "attempt-1"
+          ],
+          "reasons": [
+            "within_declared_complete_trace_budget"
+          ],
+          "status": "PASS"
+        },
+        "claim_strength": {
+          "evidence_ids": [
+            "attempt-1",
+            "cancel_request-2"
+          ],
+          "reasons": [
+            "declared_claims_do_not_exceed_supplied_evidence_scope"
+          ],
+          "status": "PASS"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "current_runtime_not_observed"
+          ],
+          "status": "UNKNOWN"
+        },
+        "durability": {
+          "evidence_ids": [],
+          "reasons": [
+            "durable_ack_missing_unresolved_stale_or_unsuitable"
+          ],
+          "status": "UNKNOWN"
+        },
+        "identity": {
+          "evidence_ids": [
+            "attempt-1",
+            "cancel_request-2"
+          ],
+          "reasons": [
+            "all_supplied_identities_match"
+          ],
+          "status": "PASS"
+        },
+        "lifecycle": {
+          "evidence_ids": [],
+          "reasons": [
+            "outcome_unresolved_closure_is_not_success"
+          ],
+          "status": "UNKNOWN"
+        },
+        "restoration": {
+          "evidence_ids": [],
+          "reasons": [
+            "fresh_process_restoration_not_established"
+          ],
+          "status": "UNKNOWN"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "closed_bounded_schema_valid"
+          ],
+          "status": "PASS"
+        },
+        "support_assessment": {
+          "evidence_ids": [],
+          "reasons": [
+            "independent_bound_assessment_missing"
+          ],
+          "status": "UNKNOWN"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": {
+        "administrative_closure": [],
+        "all_bound_assessment_verdicts": [],
+        "assessment_verdicts": [],
+        "attempts": [
+          {
+            "cost": 1,
+            "evidence_ids": [
+              "attempt-1"
+            ],
+            "id": "attempt-1",
+            "state": "ACTIVE"
+          }
+        ],
+        "cancellation": "REQUESTED_EFFECTS_UNKNOWN",
+        "charged_or_reserved_cost": 1,
+        "cleanup": [],
+        "conflicting_record_ids": [],
+        "dispatch_record_ids": [],
+        "duplicate_export_count": 0,
+        "evidence_class": "SYNTHETIC",
+        "journey": {
+          "action": "action-1",
+          "generation": "generation-1",
+          "plan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "policy_epoch": "epoch-1",
+          "run": "run-1",
+          "session": "session-1",
+          "stage": "synthesis",
+          "step": "step-1",
+          "tenant": "tenant-fictional"
+        },
+        "legacy_projections": [],
+        "local_contract_observations": [],
+        "outcome": "UNKNOWN",
+        "peak_prefix_cost": 1,
+        "prefix_costs": [
+          {
+            "cost": 1,
+            "record_id": "attempt-1"
+          }
+        ],
+        "signature_integrity_records": [],
+        "source": {
+          "exporter_schema": "fixture-export/1",
+          "python": "3.12",
+          "repository": "synthetic/szl-reference",
+          "revision": "1111111111111111111111111111111111111111",
+          "tree": "2222222222222222222222222222222222222222"
+        },
+        "stale_record_ids": [],
+        "transport_observations": [],
+        "unaccounted_attempt_ids": [],
+        "unique_record_count": 2,
+        "unknown_attempt_ids": [],
+        "wall_clock_bound": "UNKNOWN"
+      },
+      "unresolved_references": []
+    }
+  },
+  {
+    "case_id": "13",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [],
+          "reasons": [
+            "missing_or_incomplete_bound_attempt_history"
+          ],
+          "status": "UNKNOWN"
+        },
+        "admission": {
+          "evidence_ids": [],
+          "reasons": [
+            "missing_stale_or_unhydrated_admission_evidence"
+          ],
+          "status": "UNKNOWN"
+        },
+        "budget": {
+          "evidence_ids": [],
+          "reasons": [
+            "actual_budget_unknown"
+          ],
+          "status": "UNKNOWN"
+        },
+        "claim_strength": {
+          "evidence_ids": [
+            "historical_test-1"
+          ],
+          "reasons": [
+            "current_runtime_claim_not_supported"
+          ],
+          "status": "UNKNOWN"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [
+            "historical_test-1"
+          ],
+          "reasons": [
+            "current_runtime_not_observed"
+          ],
+          "status": "UNKNOWN"
+        },
+        "durability": {
+          "evidence_ids": [],
+          "reasons": [
+            "durable_ack_missing_unresolved_stale_or_unsuitable"
+          ],
+          "status": "UNKNOWN"
+        },
+        "identity": {
+          "evidence_ids": [
+            "historical_test-1"
+          ],
+          "reasons": [
+            "all_supplied_identities_match"
+          ],
+          "status": "PASS"
+        },
+        "lifecycle": {
+          "evidence_ids": [],
+          "reasons": [
+            "outcome_unresolved_closure_is_not_success"
+          ],
+          "status": "UNKNOWN"
+        },
+        "restoration": {
+          "evidence_ids": [],
+          "reasons": [
+            "fresh_process_restoration_not_established"
+          ],
+          "status": "UNKNOWN"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "closed_bounded_schema_valid"
+          ],
+          "status": "PASS"
+        },
+        "support_assessment": {
+          "evidence_ids": [],
+          "reasons": [
+            "independent_bound_assessment_missing"
+          ],
+          "status": "UNKNOWN"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": {
+        "administrative_closure": [],
+        "all_bound_assessment_verdicts": [],
+        "assessment_verdicts": [],
+        "attempts": [],
+        "cancellation": "NOT_OBSERVED",
+        "charged_or_reserved_cost": 0,
+        "cleanup": [],
+        "conflicting_record_ids": [],
+        "dispatch_record_ids": [],
+        "duplicate_export_count": 0,
+        "evidence_class": "HISTORICAL_EXECUTION",
+        "journey": {
+          "action": "action-1",
+          "generation": "generation-1",
+          "plan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "policy_epoch": "epoch-1",
+          "run": "run-1",
+          "session": "session-1",
+          "stage": "synthesis",
+          "step": "step-1",
+          "tenant": "tenant-fictional"
+        },
+        "legacy_projections": [],
+        "local_contract_observations": [],
+        "outcome": "UNKNOWN",
+        "peak_prefix_cost": 0,
+        "prefix_costs": [],
+        "signature_integrity_records": [],
+        "source": {
+          "exporter_schema": "fixture-export/1",
+          "python": "3.12",
+          "repository": "synthetic/szl-reference",
+          "revision": "1111111111111111111111111111111111111111",
+          "tree": "2222222222222222222222222222222222222222"
+        },
+        "stale_record_ids": [],
+        "transport_observations": [],
+        "unaccounted_attempt_ids": [],
+        "unique_record_count": 1,
+        "unknown_attempt_ids": [],
+        "wall_clock_bound": "UNKNOWN"
+      },
+      "unresolved_references": []
+    }
+  },
+  {
+    "case_id": "14",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [],
+          "reasons": [
+            "missing_or_incomplete_bound_attempt_history"
+          ],
+          "status": "UNKNOWN"
+        },
+        "admission": {
+          "evidence_ids": [],
+          "reasons": [
+            "missing_stale_or_unhydrated_admission_evidence"
+          ],
+          "status": "UNKNOWN"
+        },
+        "budget": {
+          "evidence_ids": [],
+          "reasons": [
+            "actual_budget_unknown"
+          ],
+          "status": "UNKNOWN"
+        },
+        "claim_strength": {
+          "evidence_ids": [
+            "plan-1"
+          ],
+          "reasons": [
+            "declared_claims_do_not_exceed_supplied_evidence_scope"
+          ],
+          "status": "PASS"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "current_runtime_not_observed"
+          ],
+          "status": "UNKNOWN"
+        },
+        "durability": {
+          "evidence_ids": [],
+          "reasons": [
+            "durable_ack_missing_unresolved_stale_or_unsuitable"
+          ],
+          "status": "UNKNOWN"
+        },
+        "identity": {
+          "evidence_ids": [
+            "plan-1"
+          ],
+          "reasons": [
+            "all_supplied_identities_match"
+          ],
+          "status": "PASS"
+        },
+        "lifecycle": {
+          "evidence_ids": [],
+          "reasons": [
+            "outcome_unresolved_closure_is_not_success"
+          ],
+          "status": "UNKNOWN"
+        },
+        "restoration": {
+          "evidence_ids": [],
+          "reasons": [
+            "fresh_process_restoration_not_established"
+          ],
+          "status": "UNKNOWN"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "closed_bounded_schema_valid"
+          ],
+          "status": "PASS"
+        },
+        "support_assessment": {
+          "evidence_ids": [],
+          "reasons": [
+            "independent_bound_assessment_missing"
+          ],
+          "status": "UNKNOWN"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": {
+        "administrative_closure": [],
+        "all_bound_assessment_verdicts": [],
+        "assessment_verdicts": [],
+        "attempts": [],
+        "cancellation": "NOT_OBSERVED",
+        "charged_or_reserved_cost": 0,
+        "cleanup": [],
+        "conflicting_record_ids": [],
+        "dispatch_record_ids": [],
+        "duplicate_export_count": 0,
+        "evidence_class": "SYNTHETIC",
+        "journey": {
+          "action": "action-1",
+          "generation": "generation-1",
+          "plan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "policy_epoch": "epoch-1",
+          "run": "run-1",
+          "session": "session-1",
+          "stage": "synthesis",
+          "step": "step-1",
+          "tenant": "tenant-fictional"
+        },
+        "legacy_projections": [],
+        "local_contract_observations": [],
+        "outcome": "UNKNOWN",
+        "peak_prefix_cost": 0,
+        "prefix_costs": [],
+        "signature_integrity_records": [],
+        "source": {
+          "exporter_schema": "fixture-export/1",
+          "python": "3.12",
+          "repository": "synthetic/szl-reference",
+          "revision": "1111111111111111111111111111111111111111",
+          "tree": "2222222222222222222222222222222222222222"
+        },
+        "stale_record_ids": [],
+        "transport_observations": [],
+        "unaccounted_attempt_ids": [],
+        "unique_record_count": 1,
+        "unknown_attempt_ids": [],
+        "wall_clock_bound": "UNKNOWN"
+      },
+      "unresolved_references": []
+    }
+  },
+  {
+    "case_id": "15",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [],
+          "reasons": [
+            "missing_or_incomplete_bound_attempt_history"
+          ],
+          "status": "UNKNOWN"
+        },
+        "admission": {
+          "evidence_ids": [],
+          "reasons": [
+            "missing_stale_or_unhydrated_admission_evidence"
+          ],
+          "status": "UNKNOWN"
+        },
+        "budget": {
+          "evidence_ids": [],
+          "reasons": [
+            "actual_budget_unknown"
+          ],
+          "status": "UNKNOWN"
+        },
+        "claim_strength": {
+          "evidence_ids": [
+            "final",
+            "first"
+          ],
+          "reasons": [
+            "declared_claims_do_not_exceed_supplied_evidence_scope"
+          ],
+          "status": "PASS"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "current_runtime_not_observed"
+          ],
+          "status": "UNKNOWN"
+        },
+        "durability": {
+          "evidence_ids": [],
+          "reasons": [
+            "durable_ack_missing_unresolved_stale_or_unsuitable"
+          ],
+          "status": "UNKNOWN"
+        },
+        "identity": {
+          "evidence_ids": [
+            "final",
+            "first"
+          ],
+          "reasons": [
+            "all_supplied_identities_match"
+          ],
+          "status": "PASS"
+        },
+        "lifecycle": {
+          "evidence_ids": [],
+          "reasons": [
+            "outcome_unresolved_closure_is_not_success"
+          ],
+          "status": "UNKNOWN"
+        },
+        "restoration": {
+          "evidence_ids": [],
+          "reasons": [
+            "fresh_process_restoration_not_established"
+          ],
+          "status": "UNKNOWN"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "closed_bounded_schema_valid"
+          ],
+          "status": "PASS"
+        },
+        "support_assessment": {
+          "evidence_ids": [],
+          "reasons": [
+            "independent_bound_assessment_missing"
+          ],
+          "status": "UNKNOWN"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": {
+        "administrative_closure": [],
+        "all_bound_assessment_verdicts": [],
+        "assessment_verdicts": [],
+        "attempts": [],
+        "cancellation": "NOT_OBSERVED",
+        "charged_or_reserved_cost": 0,
+        "cleanup": [],
+        "conflicting_record_ids": [],
+        "dispatch_record_ids": [],
+        "duplicate_export_count": 0,
+        "evidence_class": "SYNTHETIC",
+        "journey": {
+          "action": "action-1",
+          "generation": "generation-1",
+          "plan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "policy_epoch": "epoch-1",
+          "run": "run-1",
+          "session": "session-1",
+          "stage": "synthesis",
+          "step": "step-1",
+          "tenant": "tenant-fictional"
+        },
+        "legacy_projections": [
+          {
+            "id": "first",
+            "phase": "FIRST_CYCLE",
+            "value_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          {
+            "id": "final",
+            "phase": "FINAL",
+            "value_digest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        ],
+        "local_contract_observations": [],
+        "outcome": "UNKNOWN",
+        "peak_prefix_cost": 0,
+        "prefix_costs": [],
+        "signature_integrity_records": [],
+        "source": {
+          "exporter_schema": "fixture-export/1",
+          "python": "3.12",
+          "repository": "synthetic/szl-reference",
+          "revision": "1111111111111111111111111111111111111111",
+          "tree": "2222222222222222222222222222222222222222"
+        },
+        "stale_record_ids": [],
+        "transport_observations": [],
+        "unaccounted_attempt_ids": [],
+        "unique_record_count": 2,
+        "unknown_attempt_ids": [],
+        "wall_clock_bound": "UNKNOWN"
+      },
+      "unresolved_references": []
+    }
+  },
+  {
+    "case_id": "16",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [
+            "active",
+            "dispatch",
+            "reserved",
+            "settled"
+          ],
+          "reasons": [
+            "unique_attempt_costs_preserved"
+          ],
+          "status": "PASS"
+        },
+        "admission": {
+          "evidence_ids": [
+            "admission",
+            "grant",
+            "hydration"
+          ],
+          "reasons": [
+            "source_grant_revoked"
+          ],
+          "status": "FAIL"
+        },
+        "budget": {
+          "evidence_ids": [
+            "active",
+            "reserved",
+            "settled"
+          ],
+          "reasons": [
+            "within_declared_complete_trace_budget"
+          ],
+          "status": "PASS"
+        },
+        "claim_strength": {
+          "evidence_ids": [
+            "ack",
+            "active",
+            "admission",
+            "assessment",
+            "dispatch",
+            "generation",
+            "grant",
+            "hydration",
+            "reserved",
+            "restore",
+            "settled",
+            "terminal"
+          ],
+          "reasons": [
+            "current_admission_claim_not_supported"
+          ],
+          "status": "FAIL"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "current_runtime_not_observed"
+          ],
+          "status": "UNKNOWN"
+        },
+        "durability": {
+          "evidence_ids": [
+            "ack"
+          ],
+          "reasons": [
+            "bound_durable_ack_present"
+          ],
+          "status": "PASS"
+        },
+        "identity": {
+          "evidence_ids": [
+            "ack",
+            "active",
+            "admission",
+            "assessment",
+            "dispatch",
+            "generation",
+            "grant",
+            "hydration",
+            "reserved",
+            "restore",
+            "settled",
+            "terminal"
+          ],
+          "reasons": [
+            "all_supplied_identities_match"
+          ],
+          "status": "PASS"
+        },
+        "lifecycle": {
+          "evidence_ids": [
+            "dispatch",
+            "terminal"
+          ],
+          "reasons": [
+            "terminal_outcome_observed"
+          ],
+          "status": "PASS"
+        },
+        "restoration": {
+          "evidence_ids": [
+            "restore"
+          ],
+          "reasons": [
+            "bound_fresh_process_readback_present"
+          ],
+          "status": "PASS"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "closed_bounded_schema_valid"
+          ],
+          "status": "PASS"
+        },
+        "support_assessment": {
+          "evidence_ids": [
+            "assessment"
+          ],
+          "reasons": [
+            "separate_bound_assessment_present_not_truth_certification"
+          ],
+          "status": "PASS"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": {
+        "administrative_closure": [],
+        "all_bound_assessment_verdicts": [
+          "SUPPORTED"
+        ],
+        "assessment_verdicts": [
+          "SUPPORTED"
+        ],
+        "attempts": [
+          {
+            "cost": 1,
+            "evidence_ids": [
+              "active",
+              "reserved",
+              "settled"
+            ],
+            "id": "attempt-1",
+            "state": "SETTLED"
+          }
+        ],
+        "cancellation": "NOT_OBSERVED",
+        "charged_or_reserved_cost": 1,
+        "cleanup": [],
+        "conflicting_record_ids": [],
+        "dispatch_record_ids": [
+          "dispatch"
+        ],
+        "duplicate_export_count": 0,
+        "evidence_class": "SYNTHETIC",
+        "journey": {
+          "action": "action-1",
+          "generation": "generation-1",
+          "plan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "policy_epoch": "epoch-1",
+          "run": "run-1",
+          "session": "session-1",
+          "stage": "synthesis",
+          "step": "step-1",
+          "tenant": "tenant-fictional"
+        },
+        "legacy_projections": [],
+        "local_contract_observations": [],
+        "outcome": "ANSWER",
+        "peak_prefix_cost": 1,
+        "prefix_costs": [
+          {
+            "cost": 1,
+            "record_id": "reserved"
+          },
+          {
+            "cost": 1,
+            "record_id": "active"
+          },
+          {
+            "cost": 1,
+            "record_id": "settled"
+          }
+        ],
+        "signature_integrity_records": [],
+        "source": {
+          "exporter_schema": "fixture-export/1",
+          "python": "3.12",
+          "repository": "synthetic/szl-reference",
+          "revision": "1111111111111111111111111111111111111111",
+          "tree": "2222222222222222222222222222222222222222"
+        },
+        "stale_record_ids": [],
+        "transport_observations": [],
+        "unaccounted_attempt_ids": [],
+        "unique_record_count": 12,
+        "unknown_attempt_ids": [],
+        "wall_clock_bound": "UNKNOWN"
+      },
+      "unresolved_references": []
+    }
+  },
+  {
+    "case_id": "17",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "admission": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "budget": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "claim_strength": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "durability": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "identity": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "lifecycle": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "restoration": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "json:duplicate_key"
+          ],
+          "status": "FAIL"
+        },
+        "support_assessment": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": null,
+      "unresolved_references": []
+    },
+    "variant": "duplicate_json_key"
+  },
+  {
+    "case_id": "17",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "admission": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "budget": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "claim_strength": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "durability": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "identity": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "lifecycle": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "restoration": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "json:nonfinite"
+          ],
+          "status": "FAIL"
+        },
+        "support_assessment": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": null,
+      "unresolved_references": []
+    },
+    "variant": "nonfinite_json"
+  },
+  {
+    "case_id": "17",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "admission": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "budget": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "claim_strength": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "durability": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "identity": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "lifecycle": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "restoration": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema:version"
+          ],
+          "status": "FAIL"
+        },
+        "support_assessment": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": null,
+      "unresolved_references": []
+    },
+    "variant": "unsupported_schema"
+  },
+  {
+    "case_id": "17",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "admission": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "budget": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "claim_strength": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "durability": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "identity": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "lifecycle": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "restoration": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "array:size"
+          ],
+          "status": "FAIL"
+        },
+        "support_assessment": {
+          "evidence_ids": [],
+          "reasons": [
+            "schema_rejected_not_evaluated"
+          ],
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": null,
+      "unresolved_references": []
+    },
+    "variant": "oversized_array"
+  },
+  {
+    "case_id": "18",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [
+            "active",
+            "dispatch",
+            "reserved",
+            "settled"
+          ],
+          "reasons": [
+            "unique_attempt_costs_preserved"
+          ],
+          "status": "PASS"
+        },
+        "admission": {
+          "evidence_ids": [
+            "admission",
+            "grant",
+            "hydration"
+          ],
+          "reasons": [
+            "bound_current_admission_records_present"
+          ],
+          "status": "PASS"
+        },
+        "budget": {
+          "evidence_ids": [
+            "active",
+            "reserved",
+            "settled"
+          ],
+          "reasons": [
+            "within_declared_complete_trace_budget"
+          ],
+          "status": "PASS"
+        },
+        "claim_strength": {
+          "evidence_ids": [
+            "ack",
+            "active",
+            "admission",
+            "assessment",
+            "dispatch",
+            "generation",
+            "grant",
+            "hydration",
+            "reserved",
+            "restore",
+            "settled",
+            "terminal"
+          ],
+          "reasons": [
+            "observed_execution_class_overstated"
+          ],
+          "status": "FAIL"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "current_runtime_not_observed"
+          ],
+          "status": "UNKNOWN"
+        },
+        "durability": {
+          "evidence_ids": [
+            "ack"
+          ],
+          "reasons": [
+            "bound_durable_ack_present"
+          ],
+          "status": "PASS"
+        },
+        "identity": {
+          "evidence_ids": [
+            "ack",
+            "active",
+            "admission",
+            "assessment",
+            "dispatch",
+            "generation",
+            "grant",
+            "hydration",
+            "reserved",
+            "restore",
+            "settled",
+            "terminal"
+          ],
+          "reasons": [
+            "all_supplied_identities_match"
+          ],
+          "status": "PASS"
+        },
+        "lifecycle": {
+          "evidence_ids": [
+            "dispatch",
+            "terminal"
+          ],
+          "reasons": [
+            "terminal_outcome_observed"
+          ],
+          "status": "PASS"
+        },
+        "restoration": {
+          "evidence_ids": [
+            "restore"
+          ],
+          "reasons": [
+            "bound_fresh_process_readback_present"
+          ],
+          "status": "PASS"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "closed_bounded_schema_valid"
+          ],
+          "status": "PASS"
+        },
+        "support_assessment": {
+          "evidence_ids": [
+            "assessment"
+          ],
+          "reasons": [
+            "separate_bound_assessment_present_not_truth_certification"
+          ],
+          "status": "PASS"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": {
+        "administrative_closure": [],
+        "all_bound_assessment_verdicts": [
+          "SUPPORTED"
+        ],
+        "assessment_verdicts": [
+          "SUPPORTED"
+        ],
+        "attempts": [
+          {
+            "cost": 1,
+            "evidence_ids": [
+              "active",
+              "reserved",
+              "settled"
+            ],
+            "id": "attempt-1",
+            "state": "SETTLED"
+          }
+        ],
+        "cancellation": "NOT_OBSERVED",
+        "charged_or_reserved_cost": 1,
+        "cleanup": [],
+        "conflicting_record_ids": [],
+        "dispatch_record_ids": [
+          "dispatch"
+        ],
+        "duplicate_export_count": 0,
+        "evidence_class": "OBSERVED_EXECUTION",
+        "journey": {
+          "action": "action-1",
+          "generation": "generation-1",
+          "plan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "policy_epoch": "epoch-1",
+          "run": "run-1",
+          "session": "session-1",
+          "stage": "synthesis",
+          "step": "step-1",
+          "tenant": "tenant-fictional"
+        },
+        "legacy_projections": [],
+        "local_contract_observations": [],
+        "outcome": "ANSWER",
+        "peak_prefix_cost": 1,
+        "prefix_costs": [
+          {
+            "cost": 1,
+            "record_id": "reserved"
+          },
+          {
+            "cost": 1,
+            "record_id": "active"
+          },
+          {
+            "cost": 1,
+            "record_id": "settled"
+          }
+        ],
+        "signature_integrity_records": [],
+        "source": {
+          "exporter_schema": "fixture-export/1",
+          "python": "3.12",
+          "repository": "synthetic/szl-reference",
+          "revision": "1111111111111111111111111111111111111111",
+          "tree": "2222222222222222222222222222222222222222"
+        },
+        "stale_record_ids": [],
+        "transport_observations": [],
+        "unaccounted_attempt_ids": [],
+        "unique_record_count": 12,
+        "unknown_attempt_ids": [],
+        "wall_clock_bound": "UNKNOWN"
+      },
+      "unresolved_references": []
+    }
+  },
+  {
+    "case_id": "19",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [
+            "attempt-1",
+            "attempt-2"
+          ],
+          "reasons": [
+            "charged_summary_mismatch"
+          ],
+          "status": "FAIL"
+        },
+        "admission": {
+          "evidence_ids": [],
+          "reasons": [
+            "missing_stale_or_unhydrated_admission_evidence"
+          ],
+          "status": "UNKNOWN"
+        },
+        "budget": {
+          "evidence_ids": [
+            "attempt-1",
+            "attempt-2"
+          ],
+          "reasons": [
+            "charged_summary_mismatch",
+            "observed_budget_exceeded",
+            "observed_prefix_budget_exceeded"
+          ],
+          "status": "FAIL"
+        },
+        "claim_strength": {
+          "evidence_ids": [
+            "attempt-1",
+            "attempt-2"
+          ],
+          "reasons": [
+            "budget_claim_not_supported"
+          ],
+          "status": "FAIL"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "current_runtime_not_observed"
+          ],
+          "status": "UNKNOWN"
+        },
+        "durability": {
+          "evidence_ids": [],
+          "reasons": [
+            "durable_ack_missing_unresolved_stale_or_unsuitable"
+          ],
+          "status": "UNKNOWN"
+        },
+        "identity": {
+          "evidence_ids": [
+            "attempt-1",
+            "attempt-2"
+          ],
+          "reasons": [
+            "all_supplied_identities_match"
+          ],
+          "status": "PASS"
+        },
+        "lifecycle": {
+          "evidence_ids": [],
+          "reasons": [
+            "outcome_unresolved_closure_is_not_success"
+          ],
+          "status": "UNKNOWN"
+        },
+        "restoration": {
+          "evidence_ids": [],
+          "reasons": [
+            "fresh_process_restoration_not_established"
+          ],
+          "status": "UNKNOWN"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "closed_bounded_schema_valid"
+          ],
+          "status": "PASS"
+        },
+        "support_assessment": {
+          "evidence_ids": [],
+          "reasons": [
+            "independent_bound_assessment_missing"
+          ],
+          "status": "UNKNOWN"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": {
+        "administrative_closure": [],
+        "all_bound_assessment_verdicts": [],
+        "assessment_verdicts": [],
+        "attempts": [
+          {
+            "cost": 1,
+            "evidence_ids": [
+              "attempt-1"
+            ],
+            "id": "attempt-1",
+            "state": "ACTIVE"
+          },
+          {
+            "cost": 1,
+            "evidence_ids": [
+              "attempt-2"
+            ],
+            "id": "attempt-2",
+            "state": "ACTIVE"
+          }
+        ],
+        "cancellation": "NOT_OBSERVED",
+        "charged_or_reserved_cost": 2,
+        "cleanup": [],
+        "conflicting_record_ids": [],
+        "dispatch_record_ids": [],
+        "duplicate_export_count": 0,
+        "evidence_class": "SYNTHETIC",
+        "journey": {
+          "action": "action-1",
+          "generation": "generation-1",
+          "plan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "policy_epoch": "epoch-1",
+          "run": "run-1",
+          "session": "session-1",
+          "stage": "synthesis",
+          "step": "step-1",
+          "tenant": "tenant-fictional"
+        },
+        "legacy_projections": [],
+        "local_contract_observations": [],
+        "outcome": "UNKNOWN",
+        "peak_prefix_cost": 2,
+        "prefix_costs": [
+          {
+            "cost": 1,
+            "record_id": "attempt-1"
+          },
+          {
+            "cost": 2,
+            "record_id": "attempt-2"
+          }
+        ],
+        "signature_integrity_records": [],
+        "source": {
+          "exporter_schema": "fixture-export/1",
+          "python": "3.12",
+          "repository": "synthetic/szl-reference",
+          "revision": "1111111111111111111111111111111111111111",
+          "tree": "2222222222222222222222222222222222222222"
+        },
+        "stale_record_ids": [],
+        "transport_observations": [],
+        "unaccounted_attempt_ids": [],
+        "unique_record_count": 2,
+        "unknown_attempt_ids": [],
+        "wall_clock_bound": "UNKNOWN"
+      },
+      "unresolved_references": []
+    }
+  },
+  {
+    "case_id": "20",
+    "report": {
+      "checker_version": "szl-observation-checker/1",
+      "findings": {
+        "accounting": {
+          "evidence_ids": [
+            "attempt-1",
+            "attempt-3",
+            "attempt-4"
+          ],
+          "reasons": [
+            "charged_summary_mismatch"
+          ],
+          "status": "FAIL"
+        },
+        "admission": {
+          "evidence_ids": [],
+          "reasons": [
+            "missing_stale_or_unhydrated_admission_evidence"
+          ],
+          "status": "UNKNOWN"
+        },
+        "budget": {
+          "evidence_ids": [
+            "attempt-1",
+            "attempt-3",
+            "attempt-4"
+          ],
+          "reasons": [
+            "charged_summary_mismatch",
+            "observed_budget_exceeded",
+            "observed_prefix_budget_exceeded"
+          ],
+          "status": "FAIL"
+        },
+        "claim_strength": {
+          "evidence_ids": [
+            "attempt-1",
+            "attempt-3",
+            "attempt-4",
+            "timeout-2"
+          ],
+          "reasons": [
+            "budget_claim_not_supported"
+          ],
+          "status": "FAIL"
+        },
+        "current_runtime_evidence": {
+          "evidence_ids": [],
+          "reasons": [
+            "current_runtime_not_observed"
+          ],
+          "status": "UNKNOWN"
+        },
+        "durability": {
+          "evidence_ids": [],
+          "reasons": [
+            "durable_ack_missing_unresolved_stale_or_unsuitable"
+          ],
+          "status": "UNKNOWN"
+        },
+        "identity": {
+          "evidence_ids": [
+            "attempt-1",
+            "attempt-3",
+            "attempt-4",
+            "timeout-2"
+          ],
+          "reasons": [
+            "all_supplied_identities_match"
+          ],
+          "status": "PASS"
+        },
+        "lifecycle": {
+          "evidence_ids": [],
+          "reasons": [
+            "outcome_unresolved_closure_is_not_success"
+          ],
+          "status": "UNKNOWN"
+        },
+        "restoration": {
+          "evidence_ids": [],
+          "reasons": [
+            "fresh_process_restoration_not_established"
+          ],
+          "status": "UNKNOWN"
+        },
+        "schema": {
+          "evidence_ids": [],
+          "reasons": [
+            "closed_bounded_schema_valid"
+          ],
+          "status": "PASS"
+        },
+        "support_assessment": {
+          "evidence_ids": [],
+          "reasons": [
+            "independent_bound_assessment_missing"
+          ],
+          "status": "UNKNOWN"
+        }
+      },
+      "limitations": [
+        "All evidence and policy are supplied observations; authenticity, independence and real-world completeness are not established.",
+        "PASS is limited to the named consistency predicate over this bundle; it grants no authority, correctness, deployment or exactly-once qualification.",
+        "No trust root, cryptographic signature verification, live adapter, scheduler, recovery action, model or external integration is implemented.",
+        "Attempt counts do not establish wall-clock termination or absence of unobserved effects; timeout and cancellation acknowledgement do not establish stopped effects."
+      ],
+      "observations": {
+        "administrative_closure": [],
+        "all_bound_assessment_verdicts": [],
+        "assessment_verdicts": [],
+        "attempts": [
+          {
+            "cost": 1,
+            "evidence_ids": [
+              "attempt-1",
+              "attempt-3"
+            ],
+            "id": "attempt-1",
+            "state": "UNKNOWN"
+          },
+          {
+            "cost": 1,
+            "evidence_ids": [
+              "attempt-4"
+            ],
+            "id": "attempt-2",
+            "state": "RESERVED_UNSENT"
+          }
+        ],
+        "cancellation": "NOT_OBSERVED",
+        "charged_or_reserved_cost": 2,
+        "cleanup": [],
+        "conflicting_record_ids": [],
+        "dispatch_record_ids": [],
+        "duplicate_export_count": 0,
+        "evidence_class": "SYNTHETIC",
+        "journey": {
+          "action": "action-1",
+          "generation": "generation-1",
+          "plan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "policy_epoch": "epoch-1",
+          "run": "run-1",
+          "session": "session-1",
+          "stage": "synthesis",
+          "step": "step-1",
+          "tenant": "tenant-fictional"
+        },
+        "legacy_projections": [],
+        "local_contract_observations": [],
+        "outcome": "UNKNOWN",
+        "peak_prefix_cost": 2,
+        "prefix_costs": [
+          {
+            "cost": 1,
+            "record_id": "attempt-1"
+          },
+          {
+            "cost": 1,
+            "record_id": "attempt-3"
+          },
+          {
+            "cost": 2,
+            "record_id": "attempt-4"
+          }
+        ],
+        "signature_integrity_records": [],
+        "source": {
+          "exporter_schema": "fixture-export/1",
+          "python": "3.12",
+          "repository": "synthetic/szl-reference",
+          "revision": "1111111111111111111111111111111111111111",
+          "tree": "2222222222222222222222222222222222222222"
+        },
+        "stale_record_ids": [],
+        "transport_observations": [],
+        "unaccounted_attempt_ids": [],
+        "unique_record_count": 4,
+        "unknown_attempt_ids": [
+          "attempt-1"
+        ],
+        "wall_clock_bound": "UNKNOWN"
+      },
+      "unresolved_references": []
+    }
+  }
+]

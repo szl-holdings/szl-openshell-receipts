@@ -1,0 +1,3 @@
+# The observation-consistency reference is bound byte-for-byte by its SHA256SUMS.
+# Never convert line endings there, or the integrity check fails on autocrlf clones.
+reference/observation_checker/** -text
