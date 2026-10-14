@@ -1,0 +1,13 @@
+{
+  "checker_sha256": "888e1ffc3b1ebdfe0239a64052e17d69beb691b93d1bfdd00c3f127f60888fb6",
+  "command": "/usr/bin/python3 -B -m unittest -v test_observation_checker.py",
+  "errors": 0,
+  "failures": 0,
+  "interpreter": "/usr/bin/python3",
+  "log_sha256": "8b5ba03da6907cbb83909f3ac183ed4745a9cc210f83dd07c28b20d9897cd7c9",
+  "methods": 90,
+  "python_version": "3.13.5",
+  "scope": "Supplementary standard-library interpreter compatibility; no live integration",
+  "skips": 0,
+  "test_sha256": "18e1decfa5def96ef702b73a5f97ab5b097ee1766ff7dd11a66a71ede383f2de"
+}

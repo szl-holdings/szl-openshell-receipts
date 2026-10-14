@@ -1,0 +1,89 @@
+{
+  "canonical_scenarios": 20,
+  "case_reports": 23,
+  "cli_hash_seed_values": [
+    "0",
+    "1",
+    "123456"
+  ],
+  "cli_outputs_identical": true,
+  "evidence_limits": [
+    "Conformance/development data are disclosed, authored synthetic fixtures, not an independent held-out benchmark.",
+    "Separate adversarial review is finite and does not constitute formal verification.",
+    "No authentication, provenance, trust-root, model, network, real process cancellation, storage durability, deployment or integration qualification is established.",
+    "Hashes identify bytes and do not independently authenticate pre-run freeze timing."
+  ],
+  "full_predicate_oracles": true,
+  "implementation": "CPython",
+  "inputs_and_implementation_sha256": {
+    "build_fixtures.py": "a53982a598d643adc140051783bc347cdefae7386caa6e83dc5e39db2db860e1",
+    "example_bundle.json": "5cff2ede6f591c8beb0b392d27dfea28c7cd0f1e66cae2f5b89a9c984b52ae7c",
+    "example_policy.json": "bd76026c5c7fd9e01a7c2c3c1f0c062c3f2307fe60950a836d21e74accad9492",
+    "fixtures.json": "d6f1578a043c8976729d3a9d7e7ea632ab8386490d3b258544a3003eb25bfb11",
+    "observation_checker.py": "888e1ffc3b1ebdfe0239a64052e17d69beb691b93d1bfdd00c3f127f60888fb6",
+    "test_observation_checker.py": "18e1decfa5def96ef702b73a5f97ab5b097ee1766ff7dd11a66a71ede383f2de",
+    "verify.py": "b1e01125c6d93cb412a719fddfbc8680da658b3c737bbbc7b02ef5a5408e128c"
+  },
+  "malformed_variants_in_case_17": 4,
+  "negative_controls": [
+    {
+      "detected": true,
+      "detected_by_cases": [
+        "06"
+      ],
+      "name": "ignore_denied_dispatch"
+    },
+    {
+      "detected": true,
+      "detected_by_cases": [
+        "10"
+      ],
+      "name": "ignore_ack_result_identity"
+    },
+    {
+      "detected": true,
+      "detected_by_cases": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "18",
+        "19",
+        "20"
+      ],
+      "name": "promote_synthetic_to_runtime"
+    },
+    {
+      "detected": true,
+      "detected_by_cases": [
+        "02",
+        "07",
+        "20"
+      ],
+      "name": "refund_unknown_attempt"
+    }
+  ],
+  "normalized_case_report_sha256": "dffa3f537239a5043e64a9ca6e73e1d71220c4b878e78b059416c91a02594f3c",
+  "platform": "linux",
+  "python": "3.12.14",
+  "record_permutation_checks": 190,
+  "scope": "Local synthetic reference only; no ecosystem integration or live qualification",
+  "unittest": {
+    "errors": 0,
+    "failures": 0,
+    "methods": 90,
+    "skips": 0
+  }
+}

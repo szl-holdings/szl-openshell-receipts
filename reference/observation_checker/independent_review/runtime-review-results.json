@@ -1,0 +1,121 @@
+{
+  "source_sha256": "888e1ffc3b1ebdfe0239a64052e17d69beb691b93d1bfdd00c3f127f60888fb6",
+  "source_unchanged_during_run": true,
+  "passed": 7,
+  "total": 7,
+  "results": [
+    {
+      "case": "matching_only",
+      "expected_status": "PASS",
+      "actual_status": "PASS",
+      "claim_status": "PASS",
+      "reasons": [
+        "matching_supplied_runtime_observation_not_live_certification"
+      ],
+      "evidence_ids": [
+        "matching-runtime"
+      ],
+      "reported_conflicting_ids": [],
+      "input_unchanged": true,
+      "reverse_order_identical": true
+    },
+    {
+      "case": "conflicting_tree",
+      "expected_status": "FAIL",
+      "actual_status": "FAIL",
+      "claim_status": "FAIL",
+      "reasons": [
+        "runtime_source_or_python_mismatch"
+      ],
+      "evidence_ids": [
+        "matching-runtime",
+        "other-runtime"
+      ],
+      "reported_conflicting_ids": [],
+      "input_unchanged": true,
+      "reverse_order_identical": true
+    },
+    {
+      "case": "conflicting_python",
+      "expected_status": "FAIL",
+      "actual_status": "FAIL",
+      "claim_status": "FAIL",
+      "reasons": [
+        "runtime_source_or_python_mismatch"
+      ],
+      "evidence_ids": [
+        "matching-runtime",
+        "other-runtime"
+      ],
+      "reported_conflicting_ids": [],
+      "input_unchanged": true,
+      "reverse_order_identical": true
+    },
+    {
+      "case": "conflicted_runtime_id_payload",
+      "expected_status": "FAIL",
+      "actual_status": "FAIL",
+      "claim_status": "FAIL",
+      "reasons": [
+        "conflicting_runtime_record",
+        "runtime_source_or_python_mismatch"
+      ],
+      "evidence_ids": [
+        "matching-runtime"
+      ],
+      "reported_conflicting_ids": [
+        "conflicted-runtime"
+      ],
+      "input_unchanged": true,
+      "reverse_order_identical": true
+    },
+    {
+      "case": "conflicted_runtime_id_metadata",
+      "expected_status": "FAIL",
+      "actual_status": "FAIL",
+      "claim_status": "FAIL",
+      "reasons": [
+        "conflicting_runtime_record"
+      ],
+      "evidence_ids": [
+        "matching-runtime"
+      ],
+      "reported_conflicting_ids": [
+        "conflicted-runtime"
+      ],
+      "input_unchanged": true,
+      "reverse_order_identical": true
+    },
+    {
+      "case": "exact_duplicate_runtime_copy",
+      "expected_status": "PASS",
+      "actual_status": "PASS",
+      "claim_status": "PASS",
+      "reasons": [
+        "matching_supplied_runtime_observation_not_live_certification"
+      ],
+      "evidence_ids": [
+        "matching-runtime"
+      ],
+      "reported_conflicting_ids": [],
+      "input_unchanged": true,
+      "reverse_order_identical": true
+    },
+    {
+      "case": "conflicted_runtime_id_without_matching_record",
+      "expected_status": "FAIL",
+      "actual_status": "FAIL",
+      "claim_status": "FAIL",
+      "reasons": [
+        "conflicting_runtime_record",
+        "runtime_source_or_python_mismatch"
+      ],
+      "evidence_ids": [],
+      "reported_conflicting_ids": [
+        "conflicted-runtime"
+      ],
+      "input_unchanged": true,
+      "reverse_order_identical": true
+    }
+  ]
+}

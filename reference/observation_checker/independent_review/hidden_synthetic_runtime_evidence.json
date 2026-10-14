@@ -1,0 +1,131 @@
+{
+  "schema": 1,
+  "ordering": "EXPLICIT_SEQUENCE",
+  "evidence_class": "OBSERVED_EXECUTION",
+  "interval": {
+    "start": "2026-10-14T10:00:00Z",
+    "end": "2026-10-14T10:00:10Z"
+  },
+  "max_age_seconds": 60,
+  "source": {
+    "repository": "synthetic",
+    "revision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "tree": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "exporter_schema": "1",
+    "python": "3"
+  },
+  "journey": {
+    "tenant": "tenant",
+    "session": "session",
+    "action": "action",
+    "run": "run",
+    "plan": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "step": "step",
+    "stage": "stage",
+    "generation": "generation",
+    "policy_epoch": "epoch"
+  },
+  "records": [
+    {
+      "id": "runtime",
+      "kind": "runtime_observation",
+      "component": "component",
+      "artifact_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "at": "2026-10-14T10:00:00Z",
+      "seq": 1,
+      "evidence_class": "OBSERVED_EXECUTION",
+      "method": "HTTP",
+      "binding": {
+        "tenant": "tenant",
+        "session": "session",
+        "action": "action",
+        "run": "run",
+        "plan": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "step": "step",
+        "stage": "stage",
+        "generation": "generation",
+        "policy_epoch": "epoch",
+        "source_revision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_tree": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "attempt_id": null,
+      "data": {
+        "tree": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "python": "3"
+      }
+    },
+    {
+      "id": "collision",
+      "kind": "local_contract",
+      "component": "component",
+      "artifact_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "at": "2026-10-14T10:00:00Z",
+      "seq": 2,
+      "evidence_class": "SYNTHETIC",
+      "method": "FIXTURE",
+      "binding": {
+        "tenant": "tenant",
+        "session": "session",
+        "action": "action",
+        "run": "run",
+        "plan": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "step": "step",
+        "stage": "stage",
+        "generation": "generation",
+        "policy_epoch": "epoch",
+        "source_revision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_tree": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "attempt_id": null,
+      "data": {
+        "deployed": true
+      }
+    },
+    {
+      "id": "collision",
+      "kind": "local_contract",
+      "component": "component",
+      "artifact_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "at": "2026-10-14T10:00:00Z",
+      "seq": 3,
+      "evidence_class": "SYNTHETIC",
+      "method": "FIXTURE",
+      "binding": {
+        "tenant": "tenant",
+        "session": "session",
+        "action": "action",
+        "run": "run",
+        "plan": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "step": "step",
+        "stage": "stage",
+        "generation": "generation",
+        "policy_epoch": "epoch",
+        "source_revision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_tree": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "attempt_id": null,
+      "data": {
+        "deployed": false
+      }
+    }
+  ],
+  "result": null,
+  "accounting": {
+    "contract_id": "c",
+    "action": "action",
+    "unit": "calls",
+    "limit": 2,
+    "history_complete": true,
+    "summary_charged": null
+  },
+  "claims": {
+    "ui_status": "unknown",
+    "durable": false,
+    "restored": false,
+    "current_admission": false,
+    "current_runtime": true,
+    "deployed": false,
+    "budget_compliant": null,
+    "projection_record": null
+  }
+}

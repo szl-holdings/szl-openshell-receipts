@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "ordering": "EXPLICIT_SEQUENCE",
+  "evidence_class": "SYNTHETIC",
+  "interval": {
+    "start": "2026-10-14T10:00:00Z",
+    "end": "2026-10-14T10:00:10Z"
+  },
+  "max_age_seconds": 60,
+  "source": {
+    "repository": "synthetic",
+    "revision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "tree": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "exporter_schema": "1",
+    "python": "3"
+  },
+  "journey": {
+    "tenant": "tenant",
+    "session": "session",
+    "action": "action",
+    "run": "run",
+    "plan": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "step": "step",
+    "stage": "stage",
+    "generation": "generation",
+    "policy_epoch": "epoch"
+  },
+  "records": [
+    {
+      "id": "term",
+      "kind": "outcome",
+      "component": "component",
+      "artifact_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "at": "2026-10-14T10:00:00Z",
+      "seq": 1,
+      "evidence_class": "SYNTHETIC",
+      "method": "FIXTURE",
+      "binding": {
+        "tenant": "tenant",
+        "session": "session",
+        "action": "action",
+        "run": "run",
+        "plan": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "step": "step",
+        "stage": "stage",
+        "generation": "generation",
+        "policy_epoch": "epoch",
+        "source_revision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_tree": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "attempt_id": "A",
+      "data": {
+        "outcome": "ANSWER",
+        "result_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "process_id": "p"
+      }
+    },
+    {
+      "id": "term",
+      "kind": "outcome",
+      "component": "component",
+      "artifact_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "at": "2026-10-14T10:00:00Z",
+      "seq": 2,
+      "evidence_class": "SYNTHETIC",
+      "method": "FIXTURE",
+      "binding": {
+        "tenant": "tenant",
+        "session": "session",
+        "action": "action",
+        "run": "run",
+        "plan": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "step": "step",
+        "stage": "stage",
+        "generation": "generation",
+        "policy_epoch": "epoch",
+        "source_revision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_tree": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "attempt_id": "B",
+      "data": {
+        "outcome": "ANSWER",
+        "result_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "process_id": "p"
+      }
+    },
+    {
+      "id": "ack",
+      "kind": "durable_ack",
+      "component": "component",
+      "artifact_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "at": "2026-10-14T10:00:00Z",
+      "seq": 3,
+      "evidence_class": "SYNTHETIC",
+      "method": "DURABLE_STORE_READBACK",
+      "binding": {
+        "tenant": "tenant",
+        "session": "session",
+        "action": "action",
+        "run": "run",
+        "plan": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "step": "step",
+        "stage": "stage",
+        "generation": "generation",
+        "policy_epoch": "epoch",
+        "source_revision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_tree": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "attempt_id": "A",
+      "data": {
+        "result_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "storage_ref": "s"
+      }
+    }
+  ],
+  "result": {
+    "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "terminal_id": "term",
+    "receipt_refs": [
+      "ack"
+    ]
+  },
+  "accounting": {
+    "contract_id": "c",
+    "action": "action",
+    "unit": "calls",
+    "limit": 2,
+    "history_complete": true,
+    "summary_charged": null
+  },
+  "claims": {
+    "ui_status": "unknown",
+    "durable": false,
+    "restored": false,
+    "current_admission": false,
+    "current_runtime": false,
+    "deployed": false,
+    "budget_compliant": null,
+    "projection_record": null
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "source_sha256": "888e1ffc3b1ebdfe0239a64052e17d69beb691b93d1bfdd00c3f127f60888fb6",
+  "results": [
+    {
+      "case": "cancel_other_attempt",
+      "finding": "claim_strength",
+      "expected": [
+        "FAIL",
+        "UNKNOWN"
+      ],
+      "observed": "UNKNOWN",
+      "matched": true
+    },
+    {
+      "case": "hidden_terminal_conflict",
+      "finding": "lifecycle",
+      "expected": [
+        "FAIL"
+      ],
+      "observed": "FAIL",
+      "matched": true
+    },
+    {
+      "case": "unaccounted_terminal_attempt",
+      "finding": "budget",
+      "expected": [
+        "FAIL",
+        "UNKNOWN"
+      ],
+      "observed": "UNKNOWN",
+      "matched": true
+    },
+    {
+      "case": "mismatched_cited_ack",
+      "finding": "durability",
+      "expected": [
+        "FAIL"
+      ],
+      "observed": "FAIL",
+      "matched": true
+    },
+    {
+      "case": "hidden_admission_denial",
+      "finding": "admission",
+      "expected": [
+        "FAIL"
+      ],
+      "observed": "FAIL",
+      "matched": true
+    },
+    {
+      "case": "wrong_kind_terminal_restore_crash",
+      "finding": "lifecycle",
+      "expected": [
+        "FAIL"
+      ],
+      "observed": "FAIL",
+      "matched": true
+    },
+    {
+      "case": "missing_ready_plan",
+      "finding": "claim_strength",
+      "expected": [
+        "FAIL",
+        "UNKNOWN"
+      ],
+      "observed": "UNKNOWN",
+      "matched": true
+    },
+    {
+      "case": "missing_finished_closure",
+      "finding": "claim_strength",
+      "expected": [
+        "FAIL",
+        "UNKNOWN"
+      ],
+      "observed": "UNKNOWN",
+      "matched": true
+    },
+    {
+      "case": "cancel_after_answer_terminal",
+      "finding": "claim_strength",
+      "expected": [
+        "FAIL"
+      ],
+      "observed": "FAIL",
+      "matched": true
+    },
+    {
+      "case": "hidden_denial_dispatch_success",
+      "finding": "lifecycle",
+      "expected": [
+        "FAIL"
+      ],
+      "observed": "FAIL",
+      "matched": true
+    },
+    {
+      "case": "hidden_contradicted_support",
+      "finding": "support_assessment",
+      "expected": [
+        "FAIL"
+      ],
+      "observed": "FAIL",
+      "matched": true
+    },
+    {
+      "case": "hidden_contradicted_support",
+      "finding": "claim_strength",
+      "expected": [
+        "FAIL"
+      ],
+      "observed": "FAIL",
+      "matched": true
+    },
+    {
+      "case": "hidden_synthetic_runtime_evidence",
+      "finding": "claim_strength",
+      "expected": [
+        "FAIL"
+      ],
+      "observed": "FAIL",
+      "matched": true
+    },
+    {
+      "case": "hidden_synthetic_runtime_evidence",
+      "finding": "current_runtime_evidence",
+      "expected": [
+        "FAIL",
+        "UNKNOWN"
+      ],
+      "observed": "UNKNOWN",
+      "matched": true
+    },
+    {
+      "case": "stale_negative_assessment",
+      "finding": "support_assessment",
+      "expected": [
+        "FAIL"
+      ],
+      "observed": "FAIL",
+      "matched": true
+    },
+    {
+      "case": "stale_negative_assessment",
+      "finding": "claim_strength",
+      "expected": [
+        "FAIL"
+      ],
+      "observed": "FAIL",
+      "matched": true
+    },
+    {
+      "case": "order_invariance",
+      "matched": true
+    },
+    {
+      "case": "input_immutability",
+      "matched": true
+    },
+    {
+      "case": "advisory_noninterference_0",
+      "matched": true
+    },
+    {
+      "case": "advisory_noninterference_1",
+      "matched": true
+    },
+    {
+      "case": "advisory_noninterference_2",
+      "matched": true
+    },
+    {
+      "case": "advisory_noninterference_3",
+      "matched": true
+    },
+    {
+      "case": "advisory_noninterference_4",
+      "matched": true
+    },
+    {
+      "case": "advisory_noninterference_5",
+      "matched": true
+    },
+    {
+      "case": "oversized_json_integer_rejected",
+      "matched": true
+    }
+  ],
+  "passed": 25,
+  "total": 25
+}

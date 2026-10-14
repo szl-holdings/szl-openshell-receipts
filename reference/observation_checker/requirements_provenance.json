@@ -1,0 +1,22 @@
+{
+  "canonical_requirement": "szl-fit.md: Read-only observation-consistency checker, input/diagnostic/output contracts, canonical 20-case table and prototype acceptance",
+  "documents": [
+    {
+      "bytes": 240993,
+      "file_name": "SZL_Claude_Code_Builder_Handoff_v26_20261014.md",
+      "sha256": "1f457fe7f6d998bfb0a1403ddcf2b4b64ccb94757886a9f4be08274e6187e9b6"
+    },
+    {
+      "bytes": 35771,
+      "file_name": "szl-fit.md",
+      "sha256": "7763d7194fde75f85615514e3b451ab262d349ea64f5f921a0d60a95c0beb9d7"
+    },
+    {
+      "bytes": 32587,
+      "file_name": "math-model-evaluation.md",
+      "sha256": "5555efa396b57b26686760bbedb3a1d38edd2a720aaa1c32f01ee45333e5fd9b"
+    }
+  ],
+  "purpose": "Saved requirement identities only; no fresh external source audit or reuse of third-party implementation",
+  "source_study_revision": "843dfeb4bfc809c09d1bc5022e567c602d8fc9dd"
+}
