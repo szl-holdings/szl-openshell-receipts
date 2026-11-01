@@ -26,3 +26,14 @@ None on this suite.
 - Equivalence outside this suite or for other prover versions.
 - Network, process and Landlock domains; the witness models filesystem only.
 - Live sandbox enforcement; C-05 and C-06 stay open until real sandbox events are captured.
+
+
+## Path validation
+
+The witness rejects relative, parent-traversal, NUL and malformed paths, and
+compares resolved paths on the host running the witness. Duplicate separators
+are normalized; observed symlinks outside the resolved boundary are rejected.
+This is a point-in-time check, not race-safe filesystem enforcement or evidence
+about a different host's mount namespace. CLI input/output paths remain explicit
+operator-selected paths; no implicit sandbox root is claimed. A separate CLI
+root/enforcement contract is required before treating those paths as contained.

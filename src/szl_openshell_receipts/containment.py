@@ -3,16 +3,29 @@
 # through its CLI output; no OpenShell source is copied, vendored, or linked.
 
 
+from pathlib import Path
+
+
 def norm(p):
-    p = str(p).strip()
-    while len(p) > 1 and p.endswith("/"):
-        p = p[:-1]
-    return p
+    # Preserve malformed values for rejection; never coerce them into grants.
+    return (p.rstrip("/") or "/") if isinstance(p, str) and p else p
+
+
+def _resolved(p):
+    if not isinstance(p, str) or not p or "\x00" in p or p != p.strip():
+        raise ValueError("invalid filesystem grant")
+    path = Path(p)
+    if not path.is_absolute() or ".." in path.parts:
+        raise ValueError("absolute traversal-free path required")
+    return path.resolve(strict=False)
 
 
 def covers(boundary_path, path):
-    b, p = norm(boundary_path), norm(path)
-    return b == "/" or p == b or p.startswith(b + "/")
+    try:
+        b, p = _resolved(boundary_path), _resolved(path)
+        return p == b or b in p.parents
+    except (ValueError, OSError, RuntimeError):
+        return False
 
 
 def _fs(policy):
