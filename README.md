@@ -50,3 +50,19 @@ It is not part of the installed package. It does no network or model work, never
     szl-openshell-receipts controls governance/controls.json
 
 Study notes: `docs/STUDY.md`.
+
+### CLI workspace containment
+
+The CLI confines every input/output path to `--root` (default: current working
+directory). Put `--root` before the subcommand. Paths with traversal components,
+NUL/control characters, symlink components, or non-regular leaf files are refused.
+Absolute paths are accepted only inside the selected root. Parent directories
+must already exist. Output is committed through a same-directory temporary file
+and atomic replacement after every input/output path passes preflight validation.
+
+Secure file operations require POSIX directory descriptors and `O_NOFOLLOW`;
+unsupported platforms fail closed. Keep the root and its directories owned by a
+trusted operator. This is an I/O boundary, not an operating-system sandbox.
+The policy witness normalizes repeated separators and observes symlink resolution
+on the **local host**; it does not prove remote-host containment or prevent changes
+after a witness result. Invalid policy paths are rejected, not repaired silently.
