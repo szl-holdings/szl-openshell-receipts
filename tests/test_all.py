@@ -94,6 +94,41 @@ class ReachTests(unittest.TestCase):
         self.assertEqual(g["decision"], "REVIEW_REQUIRED")
         self.assertIn("WITNESS_DISAGREEMENT", g["reasons"])
 
+    def test_link_local_literals_and_metadata_aliases_require_review(self):
+        hosts = (
+            "169.254.0.0", "169.254.255.255", "fe80::", "fe90::1",
+            "febf:ffff:ffff:ffff:ffff:ffff:ffff:ffff", "FE90::1",
+            "fe90::1%eth0", "[fe90::1]", "[fe90::1%eth0]",
+            "::ffff:169.254.169.254", "::ffff:a9fe:a9fe",
+            "[::ffff:169.254.169.254]", "metadata.google.internal.",
+            "METADATA.GOOGLE.INTERNAL.", "metadata.",
+        )
+        for host in hosts:
+            with self.subTest(host=host):
+                new = {"rules": [{"binary": "curl", "host": host, "port": 80,
+                                  "methods": ["GET"], "credentialed": False}]}
+                result = delta({"rules": []}, new)
+                self.assertEqual([f["category"] for f in result["findings"]],
+                                 ["link_local_reach"])
+                # An empty external prover result must not clear this finding.
+                decision = gate(result["findings"], [])
+                self.assertEqual(decision["decision"], "REVIEW_REQUIRED")
+                self.assertIn("WITNESS_DISAGREEMENT", decision["reasons"])
+
+    def test_link_local_detection_keeps_unrelated_hosts_out(self):
+        for host in ("169.253.255.255", "169.255.0.0", "fe7f::1", "fec0::1",
+                     "2001:db8::1", "::ffff:192.0.2.1", "example.com",
+                     "metadata.google.internal.example.com"):
+            with self.subTest(host=host):
+                new = {"rules": [{"binary": "curl", "host": host, "port": 80,
+                                  "methods": ["GET"], "credentialed": False}]}
+                self.assertEqual(delta({"rules": []}, new)["findings"], [])
+
+    def test_existing_restricted_reach_is_not_a_new_expansion(self):
+        policy = {"rules": [{"binary": "curl", "host": "fe90::1", "port": 80,
+                             "methods": ["GET"], "credentialed": False}]}
+        self.assertEqual(delta(policy, policy)["findings"], [])
+
     def test_wildcard_covers(self):
         old = {"rules": [{"binary": "/usr/bin/gh", "host": "api.github.com", "port": 443, "methods": ["*"], "credentialed": True}]}
         new = {"rules": [{"binary": "/usr/bin/gh", "host": "api.github.com", "port": 443, "methods": ["*", "PUT"], "credentialed": True}]}
