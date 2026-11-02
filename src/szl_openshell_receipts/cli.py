@@ -1,6 +1,7 @@
 import argparse
 import hashlib
 import json
+import math
 import sys
 import uuid
 
@@ -11,8 +12,37 @@ from .reach import delta, gate
 from .workspace import Workspace
 
 
+def _reject_duplicate_keys(pairs):
+    value = {}
+    for key, item in pairs:
+        if key in value:
+            raise ValueError("duplicate JSON object key")
+        value[key] = item
+    return value
+
+
+def _reject_non_finite(_value):
+    raise ValueError("non-finite JSON number")
+
+
+def _parse_finite_float(value):
+    number = float(value)
+    if not math.isfinite(number):
+        raise ValueError("non-finite JSON number")
+    return number
+
+
+def _strict_json(text):
+    return json.loads(
+        text,
+        object_pairs_hook=_reject_duplicate_keys,
+        parse_constant=_reject_non_finite,
+        parse_float=_parse_finite_float,
+    )
+
+
 def _jsonl(files, path):
-    return [json.loads(x) for x in files.read_text(path).splitlines() if x.strip()]
+    return [_strict_json(x) for x in files.read_text(path).splitlines() if x.strip()]
 
 
 def main(argv=None):
@@ -70,15 +100,15 @@ def _run(a, files):
         return 0 if ok else 1
 
     if a.cmd == "delta":
-        old = json.loads(files.read_text(a.old))
-        new = json.loads(files.read_text(a.new))
+        old = _strict_json(files.read_text(a.old))
+        new = _strict_json(files.read_text(a.new))
         result = delta(old, new)
         prover = None if a.prover_findings is None else [x for x in a.prover_findings.split(",") if x]
         result["gate"] = gate(result["findings"], prover)
         print(json.dumps(result, indent=2))
         return 2 if (a.fail_on_review and result["gate"]["decision"] != "ALLOW_ELIGIBLE") else 0
 
-    ok, problems, info = validate_ledger(json.loads(files.read_text(a.ledger)))
+    ok, problems, info = validate_ledger(_strict_json(files.read_text(a.ledger)))
     print(json.dumps({"ok": ok, "problems": problems, **info}, indent=2))
     return 0 if ok else 1
 
