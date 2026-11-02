@@ -2,17 +2,59 @@
 # Original SZL implementation. openshell-prover was studied only as a black box
 # through its CLI output; no OpenShell source is copied, vendored, or linked.
 
+import os
+import stat
+from collections import deque
+
 
 def norm(p):
-    p = str(p).strip()
-    while len(p) > 1 and p.endswith("/"):
-        p = p[:-1]
-    return p
+    if not isinstance(p, str) or not p.startswith("/") or "\\" in p:
+        raise ValueError("absolute POSIX path required")
+    if any(ord(char) < 32 for char in p) or ".." in p.split("/"):
+        raise ValueError("invalid or traversing path")
+    return "/" + "/".join(part for part in p.split("/") if part not in ("", "."))
 
 
 def covers(boundary_path, path):
-    b, p = norm(boundary_path), norm(path)
-    return b == "/" or p == b or p.startswith(b + "/")
+    try:
+        b, p = norm(boundary_path), norm(path)
+        if not (b == "/" or p == b or p.startswith(b + "/")):
+            return False
+        # This witness observes local resolution; it is not a remote-host sandbox.
+        real_b, real_p = _resolved(b), _resolved(p)
+        return os.path.commonpath((real_b, real_p)) == real_b
+    except (OSError, ValueError, TypeError, RuntimeError):
+        return False
+
+
+def _resolved(path):
+    """Resolve symlinks, allowing absent suffixes but never suppressing errors."""
+    pending, resolved, links = deque(path.split("/")), [], 0
+    while pending:
+        part = pending.popleft()
+        if part in ("", "."):
+            continue
+        if part == "..":  # May occur inside a symlink target only.
+            if resolved:
+                resolved.pop()
+            continue
+        candidate = "/" + "/".join([*resolved, part])
+        try:
+            info = os.lstat(candidate)
+        except FileNotFoundError:
+            resolved.append(part)
+            continue
+        if stat.S_ISLNK(info.st_mode):
+            links += 1
+            if links > 40:
+                raise ValueError("symlink resolution limit")
+            target = os.readlink(candidate)
+            if target.startswith("/"):
+                resolved = []
+            pending.extendleft(reversed(target.split("/")))
+        else:
+            resolved.append(part)
+    return "/" + "/".join(resolved)
 
 
 def _fs(policy):
