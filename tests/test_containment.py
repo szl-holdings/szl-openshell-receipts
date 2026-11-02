@@ -38,6 +38,26 @@ class Semantics(unittest.TestCase):
         self.assertIn("/usr/share", fixed["filesystem_policy"]["read_only"])
         self.assertNotIn("/home", fixed["filesystem_policy"]["read_only"])
 
+    def test_yaml_comment_in_path_cannot_broaden_permission_to_root(self):
+        boundary = pol(rw=["/ #comment"])
+        fixed = c.repair(boundary, boundary)
+        self.assertEqual(c.check(fixed, boundary)["result"], "within_boundary")
+        self.assertIn('    - "/ #comment"\n', c.to_yaml(fixed))
+
+    def test_yaml_paths_round_trip_as_quoted_scalars(self):
+        paths = ["/tmp/name: value", '/tmp/a"b', "/tmp/ñ #literal",
+                 "/tmp/a\u0085b", "/tmp/a\u2028b"]
+        rendered = c.to_yaml(pol(ro=paths))
+        scalars = [line.removeprefix("    - ") for line in rendered.splitlines()
+                   if line.startswith("    - ")]
+        # JSON strings are YAML quoted scalars, with no parser dependency.
+        self.assertEqual([json.loads(value) for value in scalars], paths)
+
+    def test_yaml_non_bmp_path_uses_one_codepoint_escape(self):
+        rendered = c.to_yaml(pol(ro=["/tmp/\U0001f512"]))
+        self.assertIn('    - "/tmp/\\U0001f512"\n', rendered)
+        self.assertNotIn("\\ud83d", rendered)
+
 
 class Parity(unittest.TestCase):
     def test_recorded_parity_fixture(self):

@@ -25,6 +25,9 @@ Governed, hash-chained receipts and an independent policy reach-delta witness fo
 - Controls ledger (`governance/controls.json`) with doctrine labels.
 - Combined multimodal digest.
 
+Rendered policy paths are quoted YAML scalars so comment or mapping punctuation
+remains part of the filename and cannot broaden the validated permissions.
+
 ## Honest status
 See `governance/controls.json`. Chain, gate, approvals and multimodal digest are MEASURED by tests. Live OpenShell field mapping and credential isolation are UNKNOWN. Signing is UNAVAILABLE; receipts are UNSIGNED_HONEST. Examples are SYNTHETIC. The reach model is not the OpenShell policy schema. The observation-consistency checker below is MEASURED on synthetic fixtures only (C-08); a live export adapter is UNAVAILABLE (C-09).
 

@@ -101,6 +101,17 @@ def repair(candidate, boundary):
     return {"version": 1, "filesystem_policy": fs}
 
 
+def _yaml_path(path):
+    import json
+
+    # YAML needs an eight-digit escape for non-BMP characters; JSON surrogate
+    # pairs do not round-trip through YAML parsers. Quote all path punctuation.
+    return '"' + "".join(
+        json.dumps(char)[1:-1] if ord(char) <= 0xFFFF else "\\U%08x" % ord(char)
+        for char in path
+    ) + '"'
+
+
 def to_yaml(policy):
     lines = ["version: %d" % int(policy.get("version", 1))]
     fs = policy.get("filesystem_policy") or {}
@@ -111,5 +122,5 @@ def to_yaml(policy):
         for key in ("read_only", "read_write"):
             if fs.get(key):
                 lines.append("  %s:" % key)
-                lines.extend("    - %s" % p for p in fs[key])
+                lines.extend("    - %s" % _yaml_path(p) for p in fs[key])
     return "\n".join(lines) + "\n"
