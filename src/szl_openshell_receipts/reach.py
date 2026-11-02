@@ -1,6 +1,24 @@
+import ipaddress
+
 LINK_LOCAL_PREFIXES = ("169.254.", "fe80:")
 METADATA_HOSTS = {"169.254.169.254", "metadata.google.internal", "metadata"}
 OPAQUE_BINARIES = {"git-remote-https", "ssh", "nc"}
+
+
+def _link_local_or_metadata(host):
+    # Compare DNS absolute names without changing the recorded policy spelling.
+    name = host.removesuffix(".")
+    if name in METADATA_HOSTS:
+        return True
+    # Bracketed and scoped IPv6 literals can identify the same restricted reach.
+    literal = name[1:-1] if name.startswith("[") and name.endswith("]") else name
+    try:
+        address = ipaddress.ip_address(literal)
+    except ValueError:
+        # Preserve existing conservative treatment of ambiguous prefix forms.
+        return host.startswith(LINK_LOCAL_PREFIXES)
+    mapped = getattr(address, "ipv4_mapped", None)
+    return address.is_link_local or (mapped is not None and mapped.is_link_local)
 
 
 def reach_set(policy):
@@ -35,7 +53,7 @@ def delta(old, new):
     for t in added:
         binary, host, port, method, cred = t
         base = binary.replace("\\", "/").rsplit("/", 1)[-1]
-        if host.startswith(LINK_LOCAL_PREFIXES) or host in METADATA_HOSTS:
+        if _link_local_or_metadata(host):
             add("link_local_reach", t)
         if cred:
             if base in OPAQUE_BINARIES:
