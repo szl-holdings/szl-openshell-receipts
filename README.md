@@ -67,3 +67,9 @@ trusted operator. This is an I/O boundary, not an operating-system sandbox.
 The policy witness normalizes repeated separators and observes symlink resolution
 on the **local host**; it does not prove remote-host containment or prevent changes
 after a witness result. Invalid policy paths are rejected, not repaired silently.
+
+Estate on Hugging Face: models, datasets and Spaces are published under the [SZLHOLDINGS](https://huggingface.co/SZLHOLDINGS) org.
+
+## License
+
+Apache-2.0 — see [LICENSE](LICENSE).
