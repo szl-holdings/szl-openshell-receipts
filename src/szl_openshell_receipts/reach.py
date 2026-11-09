@@ -5,6 +5,41 @@ METADATA_HOSTS = {"169.254.169.254", "metadata.google.internal", "metadata"}
 OPAQUE_BINARIES = {"git-remote-https", "ssh", "nc"}
 
 
+def _legacy_ipv4_address(literal):
+    """Parse historical one-to-four-part IPv4 numbers without a resolver.
+
+    Components may be decimal, 0-prefixed octal or 0x-prefixed hexadecimal.
+    All but the last occupy one byte; the last fills the remaining bytes.
+    Bound each accumulator before constructing an address, including for long
+    inputs, rather than depending on platform socket routines or int() limits.
+    """
+    parts = literal.split(".", 4)
+    if not 1 <= len(parts) <= 4:
+        return None
+    value = 0
+    for index, part in enumerate(parts):
+        width = 8 if index < len(parts) - 1 else 8 * (5 - len(parts))
+        limit = (1 << width) - 1
+        if part.startswith(("0x", "0X")):
+            base, digits = 16, part[2:].lower()
+        elif part.startswith("0"):
+            base, digits = 8, part
+        else:
+            base, digits = 10, part
+        if not digits:
+            return None
+        number = 0
+        for char in digits:
+            digit = "0123456789abcdef".find(char)
+            if digit < 0 or digit >= base:
+                return None
+            number = number * base + digit
+            if number > limit:
+                return None
+        value = (value << width) | number
+    return ipaddress.IPv4Address(value)
+
+
 def _link_local_or_metadata(host):
     # Compare DNS absolute names without changing the recorded policy spelling.
     name = host.removesuffix(".")
@@ -15,8 +50,10 @@ def _link_local_or_metadata(host):
     try:
         address = ipaddress.ip_address(literal)
     except ValueError:
-        # Preserve existing conservative treatment of ambiguous prefix forms.
-        return host.startswith(LINK_LOCAL_PREFIXES)
+        address = _legacy_ipv4_address(literal)
+        if address is None:
+            # Preserve existing conservative treatment of ambiguous prefix forms.
+            return host.startswith(LINK_LOCAL_PREFIXES)
     mapped = getattr(address, "ipv4_mapped", None)
     return address.is_link_local or (mapped is not None and mapped.is_link_local)
 
