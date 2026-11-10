@@ -20,7 +20,7 @@ Governed, hash-chained receipts and an independent policy reach-delta witness fo
 ## v0.2
 - `ingest-log`: parses OpenShell-style audit tokens (HTTP:* DENIED/ALLOWED, CONFIG:PROPOSED/APPROVED/REJECTED/LOADED) into receipts. Only line digests and key=value fields are kept, never raw lines.
 - `delta`: SZL reach-set witness. Computes what a policy change adds and flags the four categories OpenShell's prover reasons about, using an independent simplified model.
-- Link-local reach checks cover IPv4, the full IPv6 link-local range, IPv4-mapped IPv6 literals, and absolute forms of the listed metadata hostnames. This remains a literal/name witness; it does not resolve DNS or prove runtime network isolation.
+- Link-local reach checks cover IPv4 (including historical decimal, octal, hexadecimal and abbreviated numeric forms), the full IPv6 link-local range, IPv4-mapped IPv6 literals, and absolute forms of the listed metadata hostnames. Numeric parsing is deterministic and does not invoke a resolver. This remains a literal/name witness; it does not resolve DNS or prove runtime network isolation.
 - Two-witness gate: `ALLOW_ELIGIBLE` only when this witness and the supplied prover result both report nothing.
 - Approval receipts bind candidate hash and a digest of the review token.
 - Controls ledger (`governance/controls.json`) with doctrine labels.
