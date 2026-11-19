@@ -1,0 +1,14 @@
+{
+    "action":  "kimi_ops_publish",
+    "utc":  "2026-11-19T23:18:59Z",
+    "runbook_branch":  "cto/kimi-ops-runbook-20261120",
+    "runbook_sha":  "f6a880fbb61ea6674f462f54300069afc8a6cbe4",
+    "runbook_pr":  "https://github.com/szl-holdings/szl-ops-runbook/pull/8",
+    "receipts_branch":  "cto/kimi-ops-receipts-20261120",
+    "receipts_sha":  "594870898958dc1bd5a3bd0dda55121e71c468da",
+    "receipts_pr":  "https://github.com/szl-holdings/szl-openshell-receipts/pull/31",
+    "scan_verdict":  "SCAN_CLEAN",
+    "files":  18,
+    "protection_measured":  "both mains UNPROTECTED (gh api 404 DoesNotHaveBranchProtection)",
+    "merge":  "NOT_MERGED_OWNER_DECISION"
+}

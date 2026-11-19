@@ -1,0 +1,54 @@
+{
+ "action": "phase0_differential_probe",
+ "creator": "kimi-ops session 2 (sentra cutoff)",
+ "utc_iso": "2026-11-19T22:36:36Z",
+ "probes": [
+  {
+   "name": "hf_org",
+   "status": 200,
+   "ok": true,
+   "error": null,
+   "observed_utc": "2026-11-19T22:36:32Z"
+  },
+  {
+   "name": "gh_org",
+   "status": 200,
+   "ok": true,
+   "error": null,
+   "observed_utc": "2026-11-19T22:36:33Z"
+  },
+  {
+   "name": "product",
+   "status": 200,
+   "ok": true,
+   "error": null,
+   "observed_utc": "2026-11-19T22:36:33Z"
+  },
+  {
+   "name": "training_ledger",
+   "status": 200,
+   "ok": true,
+   "error": null,
+   "observed_utc": "2026-11-19T22:36:33Z"
+  },
+  {
+   "name": "x402_health",
+   "status": 200,
+   "ok": true,
+   "error": null,
+   "observed_utc": "2026-11-19T22:36:34Z"
+  },
+  {
+   "name": "control_wikitext",
+   "status": 401,
+   "ok": false,
+   "error": "HTTPError",
+   "observed_utc": "2026-11-19T22:36:34Z"
+  }
+ ],
+ "salad_census": {
+  "performed": false,
+  "note": "skipped"
+ },
+ "verdict": "DIFFERENTIAL_NO_GO"
+}

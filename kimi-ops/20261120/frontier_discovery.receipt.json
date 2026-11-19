@@ -1,0 +1,11 @@
+{
+    "hf_spaces_bytes":  17001,
+    "action":  "frontier_discovery_readonly",
+    "hf_models_bytes":  847585,
+    "verdict":  "COLLECTED",
+    "hf_datasets_bytes":  225727,
+    "utc":  "2026-11-19T23:08:13Z",
+    "mutations":  "NONE (read-only)",
+    "local_git_repos":  29,
+    "gh_repos_bytes":  0
+}
