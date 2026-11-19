@@ -1,0 +1,112 @@
+{
+  "version": "kimi-ops-queue/1.1",
+  "utc_created": "2026-11-20T00:00:00Z",
+  "owner_directive_verbatim": "ge tkimi to handle it all give kimi acces to eceything (Snowflake app.snowflake.com/xuvuryr/kf96629) have kimi dc iin and get our snowflake fulll operaitonal runnign our github hf cf and pypi.org push trh froteir be exhasuitce have it be a fulls tack dev team infra team and cto",
+  "expanded_mandate": "Kimi = standing CTO operator with full-stack dev team + infra team mandate; all estate planes (GitHub, HF, CF, PyPI, Snowflake) driven to operational; frontier push lanes co-exist",
+  "doctrine": "fail-closed; one receipt per action incl. aborted; no estate writes from the loop itself without explicit template-driven execution; parallel lanes co-exist; anon-verify publicness; never print secrets; secrets NEVER enter model context - they stay in local harness scripts",
+  "items": [
+    {
+      "id": 1,
+      "name": "red-CI triage: sentra (run 44622369454)",
+      "kind": "triage_then_repair_pr",
+      "owner_lane": "kimi-ops",
+      "ready": true,
+      "status": "adjudicated",
+      "verdict": "BLOCKED_OWNER_GATE (ghcr package Actions-access grant)",
+      "evidence": "cto/sentra-20261119T2250Z/triage_sentra.receipt.json"
+    },
+    {
+      "id": 2,
+      "name": "red-CI triage: szl-drift (run 44589601168)",
+      "kind": "triage_then_repair_pr",
+      "owner_lane": "kimi-ops",
+      "ready": true,
+      "status": "adjudicated",
+      "verdict": "ALREADY_REMEDIATED (run now success)",
+      "evidence": "cto/sentra-20261119T2250Z/triage_szl_drift.receipt.json"
+    },
+    {
+      "id": 3,
+      "name": "red-CI triage: david-leads (run 44587736934)",
+      "kind": "triage_then_repair_pr",
+      "owner_lane": "kimi-ops",
+      "ready": true,
+      "status": "adjudicated",
+      "verdict": "BLOCKED_DEPLOYED_RUNTIME_404",
+      "evidence": "cto/sentra-20261119T2250Z/triage_david_leads.receipt.json"
+    },
+    {
+      "id": 4,
+      "name": "classify 5 active repos without workflows (alloyscape-estate-backup, alloyscape-sandbox-pliny, frontier-54-runs, frontier-55-runs, szl-acoustic-research)",
+      "kind": "classify_then_propose_minimal_ci",
+      "owner_lane": "kimi-ops",
+      "ready": true,
+      "status": "next_lap_execute_classification",
+      "evidence": "study/operational_gap_report.md finding 4; lap1 adjudication transcript"
+    },
+    {
+      "id": 5,
+      "name": "fix stale 55-README no run evidence line on the Hub",
+      "kind": "hub_readme_refresh_via_pr",
+      "owner_lane": "kimi-ops",
+      "ready": false,
+      "status": "blocked",
+      "blocked_by": "55-lane owns README on next evidence push; re-check current text before any edit"
+    },
+    {
+      "id": 6,
+      "name": "pin audit (charter phase 4)",
+      "kind": "audit",
+      "owner_lane": "kimi-ops",
+      "ready": false,
+      "status": "blocked",
+      "blocked_by": "charter phase ordering"
+    },
+    {
+      "id": 7,
+      "name": "SNOWFLAKE BRING-UP: full operational (account app.snowflake.com/xuvuryr/kf96629)",
+      "kind": "infra_bringup",
+      "owner_lane": "kimi-ops",
+      "ready": false,
+      "status": "blocked",
+      "blocked_by": "owner credentials not provided; laptop has zero Snowflake footprint (inventory2: no snowsql, no CLI, no config, no env vars); needs account identifier + auth method + role + warehouse to build runbook",
+      "evidence": "runtime/inventory2.out.txt"
+    },
+    {
+      "id": 8,
+      "name": "FRONTIER PUSH SWEEP: push estate work through GitHub + HF lanes (receipts, evidence, khipu/charter artifacts); exhaustively list pushable items and execute",
+      "kind": "execute_pushes",
+      "owner_lane": "kimi-ops",
+      "ready": true,
+      "status": "pending_next_lap",
+      "conflict_check": "one goal = one active group; frontier55/sign-v1b owned by parallel lanes per ROUND13; 55-README belongs to 55-lane"
+    },
+    {
+      "id": 9,
+      "name": "PYPI: publish szl-evidence-core via publish-pypi.yml (environment pypi, Trusted Publishing)",
+      "kind": "publish_enablement",
+      "owner_lane": "kimi-ops",
+      "ready": false,
+      "status": "blocked",
+      "blocked_by": "owner: register Trusted Publisher on pypi.org (repo szl-holdings/szl-evidence-core, workflow publish-pypi.yml, environment pypi), then rerun Actions run 44599364585; no .pypirc on laptop (inventory2)"
+    },
+    {
+      "id": 10,
+      "name": "CLOUDFLARE: infra enablement (Zone:Edit token, wrangler absent on laptop)",
+      "kind": "infra_enablement",
+      "owner_lane": "kimi-ops",
+      "ready": false,
+      "status": "blocked",
+      "blocked_by": "owner: create CF API token with Zone:Edit; no wrangler, no CF env vars on laptop (inventory2)"
+    },
+    {
+      "id": 11,
+      "name": "GHCR grants verification: after owner adds Actions-access Write for sentra/rosie/amaru packages, rerun runs and verify green",
+      "kind": "verify_after_owner_gate",
+      "owner_lane": "kimi-ops",
+      "ready": false,
+      "status": "blocked",
+      "blocked_by": "owner: 3x package settings grants (one-click each)"
+    }
+  ]
+}

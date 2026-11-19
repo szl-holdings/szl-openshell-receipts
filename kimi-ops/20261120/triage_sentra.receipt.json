@@ -1,0 +1,39 @@
+{
+ "action": "red_ci_triage_sentra",
+ "creator": "kimi-ops-lane (Vibe dc executing Kimi plan step 4)",
+ "utc_iso": "2026-11-19T22:41:00Z",
+ "run": 44622369454,
+ "repo": "szl-holdings/sentra",
+ "head_sha": "21b0b58d04ae1246d4cfcb7476f85a0eabdfdbc8",
+ "measured": {
+  "failed_job": "build-push",
+  "failed_step": "Run docker/build-push-action v7.4.0",
+  "error_verbatim_class": "failed to push ghcr.io/szl-holdings/sentra: denied: permission_denied: write_package",
+  "build_result": "IMAGE BUILD SUCCEEDED (all 4 base layers extracted fine); only the registry push was denied",
+  "workflow_permissions_declared": "job-level packages: write, contents: read, id-token: write, attestations: write",
+  "repo_actions_default": "default_workflow_permissions: read, can_approve_pull_request_reviews: false",
+  "same_workflow_repos": [
+   "a11oy",
+   "killinchu",
+   "sentra",
+   "rosie",
+   "amaru"
+  ],
+  "comparative": "a11oy success@2026-11-19T19:54:47Z; killinchu success@2026-11-19T20:04:19Z (org GHCR pushes work); sentra/rosie/amaru NEVER green (3, 3, 3 latest runs all failure)",
+  "package_existence_anon": {
+   "sentra": 200,
+   "rosie": 200,
+   "amaru": 200
+  },
+  "conflict_check": "0 open PRs on sentra at triage time"
+ },
+ "verdict": "BLOCKED_OWNER_GATE",
+ "root_cause": "ghcr.io/szl-holdings/{sentra,rosie,amaru} packages exist but were not granted repo Actions write access ('Manage Actions access'); GITHUB_TOKEN denied write_package at push time. Not a code defect; workflow and Dockerfile are correct.",
+ "owner_one_click": "For each of packages sentra, rosie, amaru: github.com org packages page -> package -> Package settings -> Manage Actions access -> add repository szl-holdings/<repo> with role Write; then rerun failed run 44622369454 (sentra) and equivalents.",
+ "evidence_path": "C:/SZL/kimi-charter/cto/sentra-20261119T2250Z/",
+ "no_code_change_made": true,
+ "disclosed_notes": [
+  "p0.py control probe (google/wikitext) now returns 401 anonymous (dataset gated); receipt verdict label DIFFERENTIAL_NO_GO was mislabelled - all 5 estate planes were green. Control to be swapped to a non-gated control in future laps.",
+  "p0 Salad census not completed in-probe (response shape mismatch, honestly noted 'skipped'); no Salad action was taken this session so it did not gate."
+ ]
+}

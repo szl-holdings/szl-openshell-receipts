@@ -1,0 +1,15 @@
+{
+ "action": "red_ci_triage_szl_drift",
+ "creator": "kimi-ops-lane (Vibe dc)",
+ "utc_iso": "2026-11-19T22:44:00Z",
+ "run": 44589601168,
+ "repo": "szl-holdings/szl-drift",
+ "measured": {
+  "current_run_conclusion": "success",
+  "study_snapshot_was": "failure (stale)"
+ },
+ "verdict": "ALREADY_REMEDIATED",
+ "note": "The gap-report finding for szl-drift is stale; run now green. Attribute the heal to whichever lane fixed it - not absorbed here. No action needed.",
+ "evidence_path": "C:/SZL/kimi-charter/cto/sentra-20261119T2250Z/",
+ "no_code_change_made": true
+}

@@ -1,0 +1,228 @@
+{
+ "version": "szl-cto-kimi-payload/1.0",
+ "estate": {
+  "owner": "Stephen Lutar (Stephen Paul Lutar JR)",
+  "github_user": "stephenlutar2-hash",
+  "github_org": "szl-holdings",
+  "hf_user": "betterwithage",
+  "hf_org": "SZLHOLDINGS",
+  "domain_product": "a-11-oy.com",
+  "domain_proof": "a11oy.net",
+  "paid_gateway": "inference.a-11-oy.com",
+  "core_doctrine": "governed intelligence: evidence enters with a request; policy can stop it; every decision keeps its reasons; every change carries a receipt."
+ },
+ "measured_state_2026_11_19": {
+  "live_services": {
+   "a11oy_product_page": "RENDERING (anon-verified at payload build)",
+   "hf_org_page": "LIVE. WAS FROZEN: HF-side org freeze 2026-11-19 ~21:21Z-21:53Z (content+commit planes 404 with admin token; anon 401 from two machines; org page 200->404) — recovery observed at payload build (publishes flowing).",
+   "training_ledger": "PUBLIC + anon-verified (hf.co/datasets/SZLHOLDINGS/training-ledger); daily keeper gate v2 (stage1 local verify + stage2 authed sha-match readback; either fail -> delete published ledger, no false deletes). 8,634+ receipts indexed.",
+   "x402_paid_gateway": "serving ternary-bonsai-2-27b-pq2_0, health-ok (evidence ledger ~19:4Z entry)",
+   "chaski_model_server": "502 — model-server process not started on its box. OWNER-PHYSICAL gate.",
+   "omen_gateway": "anonymous /api/tags -> 403 is the auth gate working, NOT an outage."
+  },
+  "github": {
+   "private_repos": 0,
+   "known_greens": [
+    "lutar-lean main 8d0f2a49 — 22/22 CI checks green",
+    "covenant-receiptchain PR #383 squash-merged (d82d70e), post-merge CI 20/20 green",
+    "A5 corpus port complete (Lean exit 0, 0 errors, 0 sorryAx, quartet [propext, Classical.choice, Quot.sound]) — PUSH GATED by owner/PhD gate, NOT yet committed",
+    "szl-showcase PR #8 merged (public-launch README + models table)",
+    "PyPI canonical-source blocks deployed to 154 HF flagship/ladder cards (0 errors, 5/5 readback)"
+   ],
+   "open_owner_gated": [
+    "a11oy PR #3771 (release-manifest promotion gate): non-draft, CI green on head e27c2b0, merge_state=behind, OWNER REVIEW GATE — do not self-merge; branch-update available on request"
+   ]
+  },
+  "huggingface": {
+   "zeroprivate": true,
+   "spaces_known_issues": [
+    "SZLHOLDINGS/llm-router-live and szl-khipu appear in org Space lists but URL 404 — audit and fix or remove",
+    "corpus-card 401/404 links already repaired (pinned governed-receipt-spec v0.1.0 verifier); 'Run Khipu, verify one receipt' quickstart landed on 4/4 top hub assets"
+   ],
+   "promoted_production": [
+    "adapter SZLHOLDINGS/salad-flagship54-v2/final on base SZLHOLDINGS/SZL-Nemotron-Mini-4B-Estate-v1 @272514fd62729db94dc4fb66052753c7ab6397d7 — ALL CRITERIA PASS + ADMISSIBLE, owner-countersigned receipt salad-v5-heldout-v2-20261119T182012.json (c2 0.0769 PASS, c3 0.40 PASS, c4 0.45 PASS, c5 0.20<=0.20 PASS, bc_neutral_band tripped -> battery_admissible TRUE)"
+   ],
+   "not_qualified_honest": [
+    "SFT adapter salad-pg54-lutar-v1: NOT QUALIFIED x2 receipts (c4 neutral collapse 0.5->0.05). Do NOT promote mesh SFT adapters; recommended rung: neutral-data replay or declare mesh infra-only."
+   ],
+   "dream_learner": "round-1 receipt verified (loss 0.6873, 110s train, adapter repo live); round-2 consolidation receipt was blocked by the freeze — re-verify state before touching group szl-dream-learner-v1 (a watcher may own it)."
+  },
+  "salad_orch": {
+   "census_last_measured": "139 groups, 19 desired replicas, 8 running, 11 wedged rep>0-not-running, 120 parked, PENDING_CHANGES=0 (v444 era); org replica quota ~30",
+   "wedge_classes": [
+    "placement wedge: 47 armed / ~14 running / 33 queued = self-saturation; census quota FIRST before blaming recipes",
+    "CPU-only envelopes near-unplaceable on Salad (GPU network); reshape to proven 3090 class (cpu4/mem16384) placed in ~2 min",
+    "pip-gated telemetry blackout: NO pip between boot and first heartbeat; first heartbeat uses stdlib urllib only (proven slimv7 pattern)"
+   ]
+  },
+  "pypi": {
+   "package": "szl-evidence-core v0.2.0",
+   "gate_ci": "PASS (Release gate bind tag->version; wheel sha256 digest-verified)",
+   "blocker": "ONLY: pypi.org Trusted Publisher registration (owner web UI): project szl-evidence-core, owner szl-holdings, repo szl-evidence-core, workflow publish-pypi.yml, environment pypi. CI refusal verbatim class: 'invalid-publisher: valid token, but no corresponding publisher'.",
+   "ready_path": "after owner registers: re-run failed jobs on Actions run 44599364585, or re-publish the release. Zero code changes needed."
+  },
+  "frontier_lanes_last_known": [
+   "frontier54-v2r-all RUNNING; heldout-flagship54-v1, eval-heritage-v1, eval-vgl-fresh-r1, ring-bench-v4b, inference-v3, train-governed-grounded-canary in flight at last census",
+   "27B distill v3 re-armed after owning-lane torch-import own-bug (fail-closed architecture proved itself: lane went DOWN not looping)",
+   "heldout-v2 verdict chain CLOSED: flagship all-pass; pg54-lutar fail x2; hatun/codex arms WITHHELD (inadmissible battery cannot carry comparison arms)"
+  ]
+ },
+ "owner_gates": [
+  "PyPI: register szl-evidence-core as Trusted Publisher on pypi.org (settings above). One time.",
+  "chaski box: start the model-server service (nginx route fully configured upstream of it).",
+  "Cloudflare: mint a Zone:Edit API token for Workers/WAF/x402 API surface (needed for the audit).",
+  "GitHub: any merge to protected main (a11oy PR #3771 included).",
+  "HF org settings/email: confirm no residual org-level restriction from the 21:21Z freeze; if the freeze was owner-initiated deliberately, say so and lanes stand down HF-side.",
+  "A5 corpus PR: owner/PhD gate on the lutar-lean corpus regen release (port is complete and verified).",
+  "Backstop scheduled task cleanup: 'SZL heldout-v2 verdict + PG54 mesh backstop' task should be deleted via the scheduling UI if still present."
+ ],
+ "doctrine": [
+  "FAIL-CLOSED: any failed verification -> no commit, no claim, park the work, write the receipt.",
+  "RECEIPTS: one receipt per attempted action INCLUDING aborted attempts and near-misses. Receipts are JSON, sha-256'd locally, verified-by-readback where a commit lands.",
+  "ATTRIBUTION: parallel lanes co-exist. If evidence shows another lane did a thing, attribute it, never absorb it. If another lane is live on a group, yield.",
+  "NO SELF-PROMOTION: model/tag/adapter promotion requires an all-pass+admissible receipt against pre-registered criteria AND an owner countersign. Countersign questions quote the evidence.",
+  "PRE-REGISTER: criteria, seeds, thresholds, and pass/fail chains are declared BEFORE the run. Adjudicate on final.log content, not filename sorts (known sort-bug).",
+  "HONEST QUARANTINE: base==adapter identical measures get quarantined (LoRA-no-op gate), never PASS.",
+  "LEDGER: append entries to the estate decision ledger in its native format: UTC timestamped, lane name, owner directive verbatim, measured facts, markers in CAPS, evidence paths. Disclose your own bugs with the same weight as others'.",
+  "NO SPEND WITHOUT A RING: GPU is a scarce shared quota (~30 replicas). Park completed groups promptly; restart_policy behaves always-restart; a finished unparked group burns a slot per loop."
+ ],
+ "salad_rules": {
+  "wedge_diagnosis_order": [
+   "1. CENSUS QUOTA FIRST: sum replicas over running+deploying; >=quota means QUEUING, not a bug. Park deadweight (rep>0, run=0 for hours) rather than re-firing.",
+   "2. GET {group}/instances; the response is a 1-key dict — len(response) is a false positive. Churn across 3-4 machines with no sustained run = burn/crash-loop class.",
+   "3. Only then suspect the spec (image tag / command / resources) — and use throwaway probes.",
+   "4. Worker heartbeat uploads are ground truth. A worker that never reaches its first beat died in boot/pip/fetch."
+  ],
+  "create_vs_placement": "Create 400 container_group_update_exception is often AUTH-HEADER strings in the canned command. Create with a trivial command, patch command/env AFTER. Placement failure is a quota question — never conflate the two.",
+  "api_behaviors": {
+   "PATCH": "requires application/merge-patch+json (application/json -> 415). Nested merge-patch is ASYNC: a 200 can read back unchanged seconds later; re-read after 25-40s.",
+   "start": "PATCH alone does not start a stopped group; POST /start after patches settle.",
+   "stop": "POST stop from deploying often 400s but is effective within 20-60s; readback is the only truth.",
+   "display_name_regex": "^[ ,-.0-9A-Za-z]+$",
+   "env": "environment_variables live under the TOP-LEVEL container key, returned as a plain dict. NEVER print env values (an estate worker HF oauth token once leaked this way; script and file deleted within the minute, token never quoted).",
+   "shm_size": "must be <=50% of memory; drop it for small-memory groups."
+  },
+  "worker_command_rules": [
+   "NO curl in worker commands on pytorch images (binary frequently absent -> CURL_FAIL). Fetch kits via hf_hub_download(..., token=os.environ['HF_TOKEN']) with explicit markers.",
+   "First heartbeat = stdlib-only (urllib NDJSON commit) BEFORE any pip; then set PIP_DEFAULT_TIMEOUT=45, PIP_RETRIES=8, and pin torch==2.8.0 via constraint file so pip can never silently upgrade it.",
+   "Proven pin set: transformers==5.22.2 peft==0.21.2 huggingface_hub pynvml.",
+   "Uploads: huggingface_hub upload_file with 5x60s retries against the 320/hour/repo commit quota; heartbeats are expendable, the FINAL receipt is mandatory.",
+   "Every worker: resolv.conf fixup, version echoes into the log, EVAL_EXIT line, TERM trap."
+  ],
+  "lane_kit": "Every lane gets (a) hold/park watcher with churn-burn rule, (b) receipt watcher with a fixed baseline set, (c) fail-closed verdict vs pre-registered criteria, (d) autopark plus spend-stop receipt. One goal = one active group; dedup-park the loser first."
+ },
+ "hf_rules": [
+  "create-repo defaults PRIVATE. Run update_repo_settings(repo_id, private=False, repo_type=...) (NOT update_repo_visibility — it does not exist). Readback private:False, then anon-verify.",
+  "Org API endpoints 404 for healthy orgs too (verified for microsoft/google) — do not adjudicate on org-info 404s; adjudicate on content planes with control reads (e.g. wikitext) in the same process with the same token.",
+  "Freeze precedent: 2026-11-19 ~21:21Z the SZLHOLDINGS content+commit planes went dark org-wide while whoami 200'd and non-estate repos read 200 with the same token. If you ever see this class of differential again: stop ALL writes, write the differential receipt, and surface owner-physical resolution. Never commit against a dark org (that doctrine was held).",
+  "Commit integrity: byte-verify uploads (bytes_before/after), record commit sha + sha256 where load-bearing, readback-verify."
+ ],
+ "phases": [
+  {
+   "id": 0,
+   "name": "COLD-STATE DIFFERENTIAL (before ANY write anywhere)",
+   "actions": [
+    "Probe anonymous: HF org page, 3 estate repos incl. training-ledger, GitHub org page, a-11-oy.com, x402 gateway health. Record status codes.",
+    "If a token is present in env, one whoami + one whoami-roleInOrg read. Hash-compare identity only, never print the token.",
+    "Decision tree: all planes green -> proceed. Any estate-plane dark with control-plane green -> FREEZE ALL WRITES, write differential receipt, go owner-physical, stop.",
+    "Run a Salad census (GET all groups). Sum replicas. Compare against the last ledger census. Inventory every RUNNING group against the known lane roster before touching anything — another lane may be mid-campaign."
+   ],
+   "done_when": "A phase-0 receipt exists on disk with all probe results and a GO / NO-GO verdict."
+  },
+  {
+   "id": 1,
+   "name": "GITHUB ORG AUDIT x10 (szl-holdings, ~155 repos)",
+   "actions": [
+    "Enumerate all repos (API, paginate). For EACH repo, ONE PASS = check: visibility vs policy, branch protection present-and-unweakened, CI check runs (last head state), README/canonical-source block present, license, secret scan (pre-flip rule), dependency pins audited ONE BY ONE (see Phase 4), issues/PRs triaged, dead workflows flagged.",
+    "Rank repos by a simple severity score 0-10 (dead CI=-3, protection missing where required=-3, secrets=-10, stale>90d=-1, green CI=+2) so the owner sees a priority list.",
+    "Anything you can fix without protected-main merge: fix via PR from a cto/* branch. NEVER direct-push to protected branches. Never force-push.",
+    "Keep a per-pass JSONL audit trail: audit_github/pass_{n}.jsonl. Diff passes; the delta between pass n and n+1 is itself a receipt."
+   ],
+   "done_when": "10 passes completed, delta log clean, zero reds, or every red has a filed PR + owner-gate note."
+  },
+  {
+   "id": 2,
+   "name": "HF ORG AUDIT x10 (SZLHOLDINGS: models, datasets, Spaces)",
+   "actions": [
+    "Full inventory via HfApi (models/datasets/Spaces). ANON-verify visibility of every public-facing asset (private-by-default doctrine).",
+    "Models: check every model card for the canonical-source block, quickstart where appropriate; check adapters' promotion status against receipts (do NOT promote anything yourself). Mark untrained/unusable models with HONEST labels — readiness is never faked, an honest 'experimental' ticket beats a fake green one.",
+    "Datasets: training-ledger keeper healthy (daily 08:30 cycle, gate v2); watch for 'fetch all-or-nothing' NO_COMMIT cycles if planes are dark.",
+    "Spaces: fix or delete the 404-listed Spaces (llm-router-live, szl-khipu). Every Space gets: working health endpoint, honest scope label, receipt-linked README. The a11oy Space serving a-11-oy.com is the flagship — keep it green and watch its logs.",
+    "Space audit like repos: secret-scan configs, no tokens in Space files, pinned dependencies, one owner 401/404-link repair per pass, verified by readback."
+   ],
+   "done_when": "10 passes, inventory reconciled, zero 404 assets, zero false-public claims, promotion matrix current with receipts."
+  },
+  {
+   "id": 3,
+   "name": "CLOUDFLARE AUDIT x10 (requires owner-minted Zone:Edit token)",
+   "actions": [
+    "Without the token: compile the audit plan + a read-only recon of public DNS/HTTP surface (a-11-oy.com, a11oy.net, inference.a-11-oy.com) — headers, certs, redirects.",
+    "With the token: zones, DNS records, Workers, WAF rules, TLS mode (Full-strict), caching rules, analytics, and Workers deployment for the x402 gateway surface.",
+    "Implement progressive improvements (orange-cloud where safe, HSTS, WAFManaged rules, zstd) with a zone-signoff receipt; rollback plan attached to every change. Origin-touching changes go to the owner first — a broken origin takes the product down."
+   ],
+   "done_when": "Audit table + receipt every change + owner signoff on anything risky."
+  },
+  {
+   "id": 4,
+   "name": "PIN AUDIT — one by one (all repos, all runtimes)",
+   "actions": [
+    "Build a full pin graph: every requirements*.txt/pyproject/Dockerfile/Salad worker command/Space stage files. For EACH pinned dependency: current version, latest stable, breaking-change risk, estate reason for pin (record the WHY).",
+    "Known load-bearing pins to respect: torch==2.8.0 (constraint file so pip cannot upgrade), transformers==5.22.2, peft==0.21.2, huggingface_hub (upload pinned), trl on 2.8.0 images, governed-receipt-spec verifier pinned v0.1.0 in cards.",
+    "Unpinned == finding. Flag any float that could silently upgrade torch. Update pins only through PR + CI green + a no-op hardware lock (unchanged measured eval output on a canary receipt)."
+   ],
+   "done_when": "pin_graph.json exists, every pin has a reason, zero silent-upgrade vectors."
+  },
+  {
+   "id": 5,
+   "name": "FRONTIER PUSH — training, evals, receipts",
+   "actions": [
+    "THIS IS THE OWNER'S HEART. Standing mission: train, evaluate honestly, publish receipts, promote only on countersign. Base models live in the org (Estate 4B, 27B distill chain, ring-ouro ladder, khipu family, quant, dream-learner).",
+    "Every training lane per the lane kit (watchers, heartbeats, receipts, autopark) and the Salad rules above. No curl. Stdlib heartbeats. Pinned deps. Torch constraint.",
+    "Eval battery = pre-registered criteria c2 contamination / c3 refusal two-sided / c4 neutral / c5 invented-id + broken_control + LoRA-noop quarantine; verdicts only from final.log content. HELDOUT discipline: no peeking, no adaptation, disclose the exact generator version.",
+    "If a run beats the standing record, the receipt chain plus an owner countersign makes it production. If a run fails, park it, write the NOT QUALIFIED receipt — a failed run with a clean receipt IS frontier progress (the heldout-v2 chain is the template).",
+    "Respect in-flight lanes: dream-learner round-2, 27B v3, frontier54-v2r, ring-v4 refires all have owners/watchers. Yield and assist; do not double-run a goal, do not stomp a group. One goal = one active group."
+   ],
+   "done_when": "Every fired lane this session ends parked with a receipt and a verdict the ledger can quote."
+  },
+  {
+   "id": 6,
+   "name": "SPACES — one-of-one vs the leaders, receipted",
+   "actions": [
+    "For each live vertical, identify the LEADER (public benchmark or the leading model Space) and run a pre-registered, same-base-or-disclosed comparison with receipts — you never claim SOTA on vibes, only on receipts a reviewer can fetch.",
+    "Candidate verticals already owned by estate assets: verifiable-corpus assistant (khipu), governed decision receipts (a11oy), quantized serving metrics, receipted benchmarking-as-a-product (a Space that runs one canonical 'Run Khipu, verify one receipt' flow and renders the honest result).",
+    "Each Space ships: pinned deps, canonical-source block, anon-accessible demo, honest comparison table with links to receipts and to the leader's own published numbers, and an explicit confidence label. If we lose a vertical today, the table says so plus the roadmap row — beat them on receipts, not adjectives.",
+    "RECOMMENDATION (surface to owner): pick 3 leader verticals for the first SOTA campaign rather than 10 shallow ones."
+   ],
+   "done_when": "Each live Space carries a current, anon-verifiable comparison receipt set."
+  },
+  {
+   "id": 7,
+   "name": "MONETIZATION — turn operational into revenue",
+   "recommendations": [
+    "Close PyPI: owner registers Trusted Publisher -> re-run jobs on 44599364585 -> szl-evidence-core 0.2.0 lands. Then publish the wheel + docs + quickstart (the publish-pypi pipeline is already gated and green in CI).",
+    "Productize inference.a-11-oy.com (x402): per-model pricing page, metered receipts, throughput SLO published, gateway uptime watch. The governed provenance (energy per receipt, full lineage) is the differentiator no competitor has — sell THAT.",
+    "A11oy SaaS: merge the promotion-gate release (PR #3771 is ready, owner gate), then hosted verification on a-11-oy.com with a free tier and a paid API/console tier.",
+    "Khipu funnel: keep the 'download is not a successful run' honesty; add a paid one-click verified-run badge (Space-backed verification of a receipt a user actually runs).",
+    "RECOMMENDATION: several-priced contracts later; first revenue = PyPI + gateway + subscription tiers. Surface all pricing to the owner for approval before anything public."
+   ],
+   "done_when": "Each revenue channel exists operationally or has a one-page plan + owner meeting on the calendar. Nothing goes live without owner signoff."
+  },
+  {
+   "id": 8,
+   "name": "WEEKLY RHYTHM + ESCALATION",
+   "actions": [
+    "Each session: append ledger entries with verbatim owner directives, markers, and evidence; keep the claims receipted.",
+    "Escalate IMMEDIATELY (stop work, single message to owner) for: any estate-plane differential freeze, any secret leak, any protection/merge anomaly, any spend anomaly.",
+    "Never escalate twice for the same owner-physical gate without new evidence."
+   ],
+   "done_when": "A clean ledger entry closes every session, and zero silent failures."
+  }
+ ],
+ "audit_passes_required": 10,
+ "utils": {
+  "read_secret_env": "in-memory only (open, read, drop reference). print only len() and sha256[:12].",
+  "run_and_receipt": "subprocess outputs NEVER echoed raw into receipts unless filtered for tokens.",
+  "receipt_file_rule": "one JSON per action, includes: action, expected, observed, verdict, utc_iso, sha256, evidence_path, redacted flag.",
+  "honest_failure": "A FAILED action with a clean receipt is a valid work product. A green claim without a receipt is grounds for full re-audit."
+ }
+}

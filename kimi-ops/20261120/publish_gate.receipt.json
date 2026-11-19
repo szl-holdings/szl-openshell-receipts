@@ -1,0 +1,9 @@
+{
+    "action":  "kimi_ops_publish_gate",
+    "utc":  "2026-11-19T23:16:56Z",
+    "files_scanned":  18,
+    "patterns":  "gh_token,hf_token,pypi_key,slack_cf,private_key,dpapi_blob,secret_assign,snow_env,priv_repos",
+    "hits_count":  0,
+    "hits":  "",
+    "verdict":  "SCAN_CLEAN"
+}

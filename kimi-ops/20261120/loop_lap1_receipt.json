@@ -1,0 +1,13 @@
+{
+    "action":  "kimi_ops_loop_lap",
+    "lap":  1,
+    "utc_iso":  "2026-11-19T22:40:55Z",
+    "results":  [
+                    {
+                        "verdict":  "ERROR",
+                        "msg":  "Exception setting \"status\": \"The property \u0027status\u0027 cannot be found on this object. Verify that the property exists and can be set.\"",
+                        "item":  0
+                    }
+                ],
+    "verdict":  "LAP_DONE"
+}

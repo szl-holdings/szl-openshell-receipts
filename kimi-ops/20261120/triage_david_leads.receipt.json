@@ -1,0 +1,19 @@
+{
+ "action": "red_ci_triage_david_leads",
+ "creator": "kimi-ops-lane (Vibe dc)",
+ "utc_iso": "2026-11-19T22:44:00Z",
+ "run": 44587736934,
+ "repo": "szl-holdings/david-leads",
+ "head_sha": "fca2691db951de28e6c982eb2cb45fd67d85deaa",
+ "measured": {
+  "failed_job": "Prove four federal lanes through deployed runtime",
+  "failed_step": "Probe exact public runtime and four federal lanes",
+  "error_verbatim_class": "Probe of the deployed runtime failed: HTTP_ERROR (HTTP 404)",
+  "unit_tests": "all frontier live canary unit tests OK (stale/future dates, redaction, tamper, fail-closed all pass)"
+ },
+ "verdict": "BLOCKED_DEPLOYED_RUNTIME_404",
+ "root_cause": "The CI probes a deployed public runtime; the endpoint returns 404 (runtime not served at expected address while the code and tests are correct). Remedy: restore/redeploy the david-leads runtime (or relocate the probe to the live runtime address via PR), then rerun run 44587736934.",
+ "owner_gate": "runtime deployment likely owner/ops-owned; the probe-address change is lane-eligible via PR once the live address is confirmed.",
+ "evidence_path": "C:/SZL/kimi-charter/cto/sentra-20261119T2250Z/david_leads_failed.log",
+ "no_code_change_made": true
+}
