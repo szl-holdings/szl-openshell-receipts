@@ -44,7 +44,19 @@ It is not part of the installed package. It does no network or model work, never
 `verify.py` and the `independent_review/` scripts rewrite the committed result files, so run them in a copy. CI does this on Python 3.10, 3.12 and 3.13 and requires byte-identical output. `SHA256SUMS` binds every file.
 
 ## Usage
-    pip install .
+
+The PyPI wheel does not include `examples/` or `governance/`. Those files live
+in this repository. After `pip install szl-openshell-receipts`, clone the git
+tag that matches the installed version (for the current PyPI release, `v0.3.2`)
+and run the commands from that checkout:
+
+    git clone --depth 1 --branch v0.3.2 https://github.com/szl-holdings/szl-openshell-receipts.git
+    cd szl-openshell-receipts
+
+If you already have a clone of this repository, the same files are at the
+matching tag and on `main`.
+
+    pip install szl-openshell-receipts
     szl-openshell-receipts ingest-log examples/openshell.sample.log --policy examples/policy.readonly-audit.yaml --commit <sha> --out r.jsonl
     szl-openshell-receipts verify r.jsonl
     szl-openshell-receipts delta examples/policy.before.json examples/policy.after.json --prover-findings capability_expansion
